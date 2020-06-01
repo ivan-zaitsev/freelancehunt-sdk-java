@@ -12,6 +12,9 @@ public class Error {
     @JsonProperty("title")
     private String title;
 
+    @JsonProperty("detail")
+    private String detail;
+
     public Error() {
     }
 
@@ -29,12 +32,13 @@ public class Error {
         if (o == null || getClass() != o.getClass()) return false;
         Error error = (Error) o;
         return Objects.equals(status, error.status) &&
-                Objects.equals(title, error.title);
+                Objects.equals(title, error.title) &&
+                Objects.equals(detail, error.detail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, title);
+        return Objects.hash(status, title, detail);
     }
 
     @Override
@@ -42,6 +46,7 @@ public class Error {
         return "Error{" +
                 "status=" + status +
                 ", title='" + title + '\'' +
+                ", detail='" + detail + '\'' +
                 '}';
     }
 
