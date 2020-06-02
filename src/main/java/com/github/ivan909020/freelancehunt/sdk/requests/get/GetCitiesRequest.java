@@ -12,14 +12,14 @@ public class GetCitiesRequest extends GetApiRequest<GetCitiesResponse> {
     public GetCitiesRequest() {
     }
 
-    @Override
-    public String getUrlPath() {
-        return "cities/" + countryId;
-    }
-
     public GetCitiesRequest setCountryId(Long countryId) {
         this.countryId = countryId;
         return this;
+    }
+
+    @Override
+    public String getUrlPath() {
+        return "cities/" + countryId;
     }
 
     @Override
