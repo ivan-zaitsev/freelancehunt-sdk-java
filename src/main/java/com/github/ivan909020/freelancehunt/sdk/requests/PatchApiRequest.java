@@ -13,12 +13,12 @@ public abstract class PatchApiRequest<T> extends ApiRequest<T> {
         validate();
 
         HttpPatch request = new HttpPatch(getUrl());
-        addHeaders(request);
-        addEntity(request);
+        setHeaders(request);
+        setEntity(request);
         return deserializeResponse(getApi().getTransportClient().execute(request));
     }
 
-    public void addEntity(HttpPatch request) {
+    public void setEntity(HttpPatch request) {
         request.setEntity(new StringEntity(createPayload(), ContentType.APPLICATION_JSON));
     }
 

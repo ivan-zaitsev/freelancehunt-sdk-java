@@ -13,12 +13,12 @@ public abstract class PostApiRequest<T> extends ApiRequest<T> {
         validate();
 
         HttpPost request = new HttpPost(getUrl());
-        addHeaders(request);
-        addEntity(request);
+        setHeaders(request);
+        setEntity(request);
         return deserializeResponse(getApi().getTransportClient().execute(request));
     }
 
-    public void addEntity(HttpPost request) {
+    public void setEntity(HttpPost request) {
         request.setEntity(new StringEntity(createPayload(), ContentType.APPLICATION_JSON));
     }
 

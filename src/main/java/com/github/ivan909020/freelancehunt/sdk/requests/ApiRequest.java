@@ -43,7 +43,7 @@ public abstract class ApiRequest<T> {
         }
     }
 
-    public void addHeaders(HttpRequestBase request) {
+    public void setHeaders(HttpRequestBase request) {
         request.setHeader("Authorization", "Bearer " + getApi().getToken());
     }
 

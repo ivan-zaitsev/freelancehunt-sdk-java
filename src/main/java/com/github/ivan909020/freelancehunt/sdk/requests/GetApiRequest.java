@@ -15,7 +15,7 @@ public abstract class GetApiRequest<T> extends ApiRequest<T> {
         validate();
 
         HttpGet request = new HttpGet(buildUri());
-        addHeaders(request);
+        setHeaders(request);
         return deserializeResponse(getApi().getTransportClient().execute(request));
     }
 

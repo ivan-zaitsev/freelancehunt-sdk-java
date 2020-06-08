@@ -9,7 +9,7 @@ public abstract class DeleteApiRequest<T> extends ApiRequest<T> {
         validate();
 
         HttpDelete request = new HttpDelete(getUrl());
-        addHeaders(request);
+        setHeaders(request);
         return deserializeResponse(getApi().getTransportClient().execute(request));
     }
 

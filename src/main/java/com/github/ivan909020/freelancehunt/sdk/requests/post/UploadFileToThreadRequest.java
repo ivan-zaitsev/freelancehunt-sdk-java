@@ -30,7 +30,7 @@ public class UploadFileToThreadRequest extends PostApiRequest<UploadFileToThread
     }
 
     @Override
-    public void addEntity(HttpPost request) {
+    public void setEntity(HttpPost request) {
         MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create();
         for (int i = 0; i < attachments.size(); i++) {
             String name = "attachment" + (i + 1);
