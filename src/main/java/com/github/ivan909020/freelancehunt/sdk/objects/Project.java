@@ -19,7 +19,7 @@ public class Project {
     private Status status;
 
     @JsonProperty("safe_type")
-    private String safeType;
+    private SafeType safeType;
 
     @JsonProperty("budget")
     private Budget budget;
@@ -43,7 +43,7 @@ public class Project {
         return status;
     }
 
-    public String getSafeType() {
+    public SafeType getSafeType() {
         return safeType;
     }
 
@@ -60,7 +60,7 @@ public class Project {
                 Objects.equals(type, project.type) &&
                 Objects.equals(name, project.name) &&
                 Objects.equals(status, project.status) &&
-                Objects.equals(safeType, project.safeType) &&
+                safeType == project.safeType &&
                 Objects.equals(budget, project.budget);
     }
 
@@ -76,7 +76,7 @@ public class Project {
                 ", type='" + type + '\'' +
                 ", name='" + name + '\'' +
                 ", status=" + status +
-                ", safeType='" + safeType + '\'' +
+                ", safeType=" + safeType +
                 ", budget=" + budget +
                 '}';
     }

@@ -95,7 +95,7 @@ public class ProjectDetails {
         private Location location;
 
         @JsonProperty("safe_type")
-        private String safeType;
+        private SafeType safeType;
 
         @JsonProperty("is_personal")
         private Boolean isPersonal;
@@ -164,7 +164,7 @@ public class ProjectDetails {
             return location;
         }
 
-        public String getSafeType() {
+        public SafeType getSafeType() {
             return safeType;
         }
 
@@ -208,7 +208,7 @@ public class ProjectDetails {
                     Objects.equals(isPremium, that.isPremium) &&
                     Objects.equals(isOnlyForPlus, that.isOnlyForPlus) &&
                     Objects.equals(location, that.location) &&
-                    Objects.equals(safeType, that.safeType) &&
+                    safeType == that.safeType &&
                     Objects.equals(isPersonal, that.isPersonal) &&
                     Objects.equals(employer, that.employer) &&
                     Objects.equals(freelancer, that.freelancer) &&
@@ -236,7 +236,7 @@ public class ProjectDetails {
                     ", isPremium=" + isPremium +
                     ", isOnlyForPlus=" + isOnlyForPlus +
                     ", location=" + location +
-                    ", safeType='" + safeType + '\'' +
+                    ", safeType=" + safeType +
                     ", isPersonal=" + isPersonal +
                     ", employer=" + employer +
                     ", freelancer=" + freelancer +
