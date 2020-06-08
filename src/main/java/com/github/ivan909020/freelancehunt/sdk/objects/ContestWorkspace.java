@@ -2,10 +2,11 @@ package com.github.ivan909020.freelancehunt.sdk.objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.ivan909020.freelancehunt.sdk.client.ResponseDeserializer;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Objects;
+
+import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_TIME_PATTERN;
 
 public class ContestWorkspace {
 
@@ -69,12 +70,12 @@ public class ContestWorkspace {
         private User freelancer;
 
         @JsonProperty("winner_chosen_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_TIME_PATTERN)
-        private LocalDateTime winnerChosenAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+        private ZonedDateTime winnerChosenAt;
 
         @JsonProperty("ended_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_TIME_PATTERN)
-        private LocalDateTime endedAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+        private ZonedDateTime endedAt;
 
         public Attributes() {
         }
@@ -91,11 +92,11 @@ public class ContestWorkspace {
             return freelancer;
         }
 
-        public LocalDateTime getWinnerChosenAt() {
+        public ZonedDateTime getWinnerChosenAt() {
             return winnerChosenAt;
         }
 
-        public LocalDateTime getEndedAt() {
+        public ZonedDateTime getEndedAt() {
             return endedAt;
         }
 

@@ -52,7 +52,7 @@ public abstract class ApiRequest<T> {
     public <U extends ApiResponse> U deserializeResponse(String responseContent, Class<U> responseClass) {
         U response;
         try {
-            response = api.getResponseDeserializer().getObjectMapper().readValue(responseContent, responseClass);
+            response = api.getObjectMapperConfig().getObjectMapper().readValue(responseContent, responseClass);
         } catch (IOException e) {
             throw new ApiRequestException("Failed to deserialize response", e);
         }

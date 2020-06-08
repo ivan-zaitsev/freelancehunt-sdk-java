@@ -2,11 +2,12 @@ package com.github.ivan909020.freelancehunt.sdk.objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.ivan909020.freelancehunt.sdk.client.ResponseDeserializer;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Objects;
+
+import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_PATTERN;
 
 public class Message {
 
@@ -67,8 +68,8 @@ public class Message {
         private String messageHtml;
 
         @JsonProperty("posted_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_PATTERN)
-        private LocalDateTime postedAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_PATTERN)
+        private ZonedDateTime postedAt;
 
         @JsonProperty("attachments")
         private List<Attachment> attachments;
@@ -87,7 +88,7 @@ public class Message {
             return messageHtml;
         }
 
-        public LocalDateTime getPostedAt() {
+        public ZonedDateTime getPostedAt() {
             return postedAt;
         }
 

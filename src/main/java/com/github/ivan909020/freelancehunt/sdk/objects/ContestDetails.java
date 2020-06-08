@@ -2,11 +2,12 @@ package com.github.ivan909020.freelancehunt.sdk.objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.ivan909020.freelancehunt.sdk.client.ResponseDeserializer;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Objects;
+
+import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_TIME_PATTERN;
 
 public class ContestDetails {
 
@@ -82,15 +83,15 @@ public class ContestDetails {
         private Integer applicationCount;
 
         @JsonProperty("published_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_TIME_PATTERN)
-        private LocalDateTime publishedAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+        private ZonedDateTime publishedAt;
 
         @JsonProperty("duration_days")
         private Integer durationDays;
 
         @JsonProperty("final_started_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_TIME_PATTERN)
-        private LocalDateTime finalStartedAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+        private ZonedDateTime finalStartedAt;
 
         @JsonProperty("freelancer")
         private User freelancer;
@@ -135,7 +136,7 @@ public class ContestDetails {
             return applicationCount;
         }
 
-        public LocalDateTime getPublishedAt() {
+        public ZonedDateTime getPublishedAt() {
             return publishedAt;
         }
 
@@ -143,7 +144,7 @@ public class ContestDetails {
             return durationDays;
         }
 
-        public LocalDateTime getFinalStartedAt() {
+        public ZonedDateTime getFinalStartedAt() {
             return finalStartedAt;
         }
 

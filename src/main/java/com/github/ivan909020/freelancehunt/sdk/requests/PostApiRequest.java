@@ -24,7 +24,7 @@ public abstract class PostApiRequest<T> extends ApiRequest<T> {
 
     private String createPayload() {
         try {
-            return getApi().getResponseDeserializer().getObjectMapper().writeValueAsString(getParameters());
+            return getApi().getObjectMapperConfig().getObjectMapper().writeValueAsString(getParameters());
         } catch (JsonProcessingException e) {
             throw new ApiException("Failed to create request payload", e);
         }

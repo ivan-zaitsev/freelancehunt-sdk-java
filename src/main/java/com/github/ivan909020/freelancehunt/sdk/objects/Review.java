@@ -2,10 +2,11 @@ package com.github.ivan909020.freelancehunt.sdk.objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.ivan909020.freelancehunt.sdk.client.ResponseDeserializer;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Objects;
+
+import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_TIME_PATTERN;
 
 public class Review {
 
@@ -60,8 +61,8 @@ public class Review {
     public static class Attributes {
 
         @JsonProperty("published_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_TIME_PATTERN)
-        private LocalDateTime publishedAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+        private ZonedDateTime publishedAt;
 
         @JsonProperty("is_pending")
         private Boolean isPending;
@@ -81,7 +82,7 @@ public class Review {
         public Attributes() {
         }
 
-        public LocalDateTime getPublishedAt() {
+        public ZonedDateTime getPublishedAt() {
             return publishedAt;
         }
 

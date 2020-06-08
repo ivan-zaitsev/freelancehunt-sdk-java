@@ -2,10 +2,11 @@ package com.github.ivan909020.freelancehunt.sdk.objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.ivan909020.freelancehunt.sdk.client.ResponseDeserializer;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Objects;
+
+import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_PATTERN;
 
 public class Thread {
 
@@ -63,12 +64,12 @@ public class Thread {
         private String subject;
 
         @JsonProperty("first_post_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_PATTERN)
-        private LocalDateTime firstPostAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_PATTERN)
+        private ZonedDateTime firstPostAt;
 
         @JsonProperty("last_post_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_PATTERN)
-        private LocalDateTime lastPostAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_PATTERN)
+        private ZonedDateTime lastPostAt;
 
         @JsonProperty("messages_count")
         private Integer messagesCount;
@@ -89,11 +90,11 @@ public class Thread {
             return subject;
         }
 
-        public LocalDateTime getFirstPostAt() {
+        public ZonedDateTime getFirstPostAt() {
             return firstPostAt;
         }
 
-        public LocalDateTime getLastPostAt() {
+        public ZonedDateTime getLastPostAt() {
             return lastPostAt;
         }
 

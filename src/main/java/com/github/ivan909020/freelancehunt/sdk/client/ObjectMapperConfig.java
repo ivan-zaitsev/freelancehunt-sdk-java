@@ -4,14 +4,14 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-public class ResponseDeserializer {
+public class ObjectMapperConfig {
 
     public static final String DATE_PATTERN = "yyyy-MM-dd";
     public static final String DATE_TIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ssXXX";
 
     private final ObjectMapper objectMapper = createObjectMapper();
 
-    public ResponseDeserializer() {
+    public ObjectMapperConfig() {
     }
 
     private ObjectMapper createObjectMapper() {

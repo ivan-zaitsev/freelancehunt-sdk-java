@@ -2,12 +2,14 @@ package com.github.ivan909020.freelancehunt.sdk.objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.ivan909020.freelancehunt.sdk.client.ResponseDeserializer;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Objects;
+
+import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_PATTERN;
+import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_TIME_PATTERN;
 
 public class UserDetails {
 
@@ -74,12 +76,12 @@ public class UserDetails {
         private Avatar avatar;
 
         @JsonProperty("birth_date")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_PATTERN)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_PATTERN)
         private LocalDate birthDate;
 
         @JsonProperty("created_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_TIME_PATTERN)
-        private LocalDateTime createdAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+        private ZonedDateTime createdAt;
 
         @JsonProperty("cv")
         private String cv;
@@ -103,8 +105,8 @@ public class UserDetails {
         private Integer negativeReviews;
 
         @JsonProperty("plus_ends_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_TIME_PATTERN)
-        private LocalDateTime plusEndsAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+        private ZonedDateTime plusEndsAt;
 
         @JsonProperty("is_plus_active")
         private Boolean isPlusActive;
@@ -113,8 +115,8 @@ public class UserDetails {
         private Boolean isOnline;
 
         @JsonProperty("visited_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = ResponseDeserializer.DATE_TIME_PATTERN)
-        private LocalDateTime visitedAt;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+        private ZonedDateTime visitedAt;
 
         @JsonProperty("location")
         private Location location;
@@ -154,7 +156,7 @@ public class UserDetails {
             return birthDate;
         }
 
-        public LocalDateTime getCreatedAt() {
+        public ZonedDateTime getCreatedAt() {
             return createdAt;
         }
 
@@ -186,7 +188,7 @@ public class UserDetails {
             return negativeReviews;
         }
 
-        public LocalDateTime getPlusEndsAt() {
+        public ZonedDateTime getPlusEndsAt() {
             return plusEndsAt;
         }
 
@@ -198,7 +200,7 @@ public class UserDetails {
             return isOnline;
         }
 
-        public LocalDateTime getVisitedAt() {
+        public ZonedDateTime getVisitedAt() {
             return visitedAt;
         }
 
