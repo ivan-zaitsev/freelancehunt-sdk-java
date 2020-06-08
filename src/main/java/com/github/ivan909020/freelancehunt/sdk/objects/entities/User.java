@@ -1,6 +1,8 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.Avatar;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.EntityType;
 
 import java.util.Objects;
 
@@ -10,7 +12,7 @@ public class User {
     private Long id;
 
     @JsonProperty("type")
-    private String type;
+    private EntityType type;
 
     @JsonProperty("login")
     private String login;
@@ -31,7 +33,7 @@ public class User {
         return id;
     }
 
-    public String getType() {
+    public EntityType getType() {
         return type;
     }
 
@@ -57,7 +59,7 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return Objects.equals(id, user.id) &&
-                Objects.equals(type, user.type) &&
+                type == user.type &&
                 Objects.equals(login, user.login) &&
                 Objects.equals(firstName, user.firstName) &&
                 Objects.equals(lastName, user.lastName) &&
@@ -73,7 +75,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", login='" + login + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

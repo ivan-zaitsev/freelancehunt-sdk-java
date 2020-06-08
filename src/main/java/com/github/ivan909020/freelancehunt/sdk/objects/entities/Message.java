@@ -1,7 +1,9 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.EntityType;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.Participants;
 
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -15,7 +17,7 @@ public class Message {
     private Long id;
 
     @JsonProperty("type")
-    private String type;
+    private EntityType type;
 
     @JsonProperty("attributes")
     private Attributes attributes;
@@ -27,7 +29,7 @@ public class Message {
         return id;
     }
 
-    public String getType() {
+    public EntityType getType() {
         return type;
     }
 
@@ -39,10 +41,10 @@ public class Message {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Message thread = (Message) o;
-        return Objects.equals(id, thread.id) &&
-                Objects.equals(type, thread.type) &&
-                Objects.equals(attributes, thread.attributes);
+        Message message = (Message) o;
+        return Objects.equals(id, message.id) &&
+                type == message.type &&
+                Objects.equals(attributes, message.attributes);
     }
 
     @Override
@@ -54,7 +56,7 @@ public class Message {
     public String toString() {
         return "Message{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", attributes=" + attributes +
                 '}';
     }

@@ -1,7 +1,9 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.EntityType;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.Grades;
 
 import java.time.ZonedDateTime;
 import java.util.Objects;
@@ -14,7 +16,7 @@ public class Review {
     private Long id;
 
     @JsonProperty("type")
-    private String type;
+    private EntityType type;
 
     @JsonProperty("attributes")
     private Attributes attributes;
@@ -26,7 +28,7 @@ public class Review {
         return id;
     }
 
-    public String getType() {
+    public EntityType getType() {
         return type;
     }
 
@@ -38,10 +40,10 @@ public class Review {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Review thread = (Review) o;
-        return Objects.equals(id, thread.id) &&
-                Objects.equals(type, thread.type) &&
-                Objects.equals(attributes, thread.attributes);
+        Review review = (Review) o;
+        return Objects.equals(id, review.id) &&
+                type == review.type &&
+                Objects.equals(attributes, review.attributes);
     }
 
     @Override
@@ -53,7 +55,7 @@ public class Review {
     public String toString() {
         return "Review{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", attributes=" + attributes +
                 '}';
     }

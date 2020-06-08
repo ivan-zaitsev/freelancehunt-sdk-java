@@ -1,7 +1,8 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.EntityType;
 
 import java.time.ZonedDateTime;
 import java.util.Objects;
@@ -14,7 +15,7 @@ public class Feed {
     private Long id;
 
     @JsonProperty("type")
-    private String type;
+    private EntityType type;
 
     @JsonProperty("attributes")
     private Attributes attributes;
@@ -26,7 +27,7 @@ public class Feed {
         return id;
     }
 
-    public String getType() {
+    public EntityType getType() {
         return type;
     }
 
@@ -40,7 +41,7 @@ public class Feed {
         if (o == null || getClass() != o.getClass()) return false;
         Feed feed = (Feed) o;
         return Objects.equals(id, feed.id) &&
-                Objects.equals(type, feed.type) &&
+                type == feed.type &&
                 Objects.equals(attributes, feed.attributes);
     }
 
@@ -53,7 +54,7 @@ public class Feed {
     public String toString() {
         return "Feed{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", attributes=" + attributes +
                 '}';
     }

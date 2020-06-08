@@ -1,6 +1,10 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.Budget;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.EntityType;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.SafeType;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.Status;
 
 import java.util.Objects;
 
@@ -10,7 +14,7 @@ public class Project {
     private Long id;
 
     @JsonProperty("type")
-    private String type;
+    private EntityType type;
 
     @JsonProperty("name")
     private String name;
@@ -31,7 +35,7 @@ public class Project {
         return id;
     }
 
-    public String getType() {
+    public EntityType getType() {
         return type;
     }
 
@@ -57,7 +61,7 @@ public class Project {
         if (o == null || getClass() != o.getClass()) return false;
         Project project = (Project) o;
         return Objects.equals(id, project.id) &&
-                Objects.equals(type, project.type) &&
+                type == project.type &&
                 Objects.equals(name, project.name) &&
                 Objects.equals(status, project.status) &&
                 safeType == project.safeType &&
@@ -73,7 +77,7 @@ public class Project {
     public String toString() {
         return "Project{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", name='" + name + '\'' +
                 ", status=" + status +
                 ", safeType=" + safeType +

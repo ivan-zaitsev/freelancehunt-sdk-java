@@ -1,10 +1,10 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-public class Status {
+public class Tag {
 
     @JsonProperty("id")
     private Integer id;
@@ -12,7 +12,7 @@ public class Status {
     @JsonProperty("name")
     private String name;
 
-    public Status() {
+    public Tag() {
     }
 
     public Integer getId() {
@@ -27,7 +27,7 @@ public class Status {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Status status = (Status) o;
+        Tag status = (Tag) o;
         return Objects.equals(id, status.id) &&
                 Objects.equals(name, status.name);
     }
@@ -39,7 +39,7 @@ public class Status {
 
     @Override
     public String toString() {
-        return "Status{" +
+        return "Tag{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

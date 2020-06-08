@@ -1,7 +1,8 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.*;
 
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -15,7 +16,7 @@ public class ContestDetails {
     private Long id;
 
     @JsonProperty("type")
-    private String type;
+    private EntityType type;
 
     @JsonProperty("attributes")
     private Attributes attributes;
@@ -27,7 +28,7 @@ public class ContestDetails {
         return id;
     }
 
-    public String getType() {
+    public EntityType getType() {
         return type;
     }
 
@@ -39,10 +40,10 @@ public class ContestDetails {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ContestDetails profile = (ContestDetails) o;
-        return Objects.equals(id, profile.id) &&
-                Objects.equals(type, profile.type) &&
-                Objects.equals(attributes, profile.attributes);
+        ContestDetails that = (ContestDetails) o;
+        return Objects.equals(id, that.id) &&
+                type == that.type &&
+                Objects.equals(attributes, that.attributes);
     }
 
     @Override
@@ -52,9 +53,9 @@ public class ContestDetails {
 
     @Override
     public String toString() {
-        return "Contest{" +
+        return "ContestDetails{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", attributes=" + attributes +
                 '}';
     }

@@ -1,10 +1,10 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-public class Skill {
+public class City {
 
     @JsonProperty("id")
     private Long id;
@@ -12,10 +12,7 @@ public class Skill {
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("rating_position")
-    private Integer ratingPosition;
-
-    public Skill() {
+    public City() {
     }
 
     public Long getId() {
@@ -26,31 +23,25 @@ public class Skill {
         return name;
     }
 
-    public Integer getRatingPosition() {
-        return ratingPosition;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Skill skill = (Skill) o;
-        return Objects.equals(id, skill.id) &&
-                Objects.equals(name, skill.name) &&
-                Objects.equals(ratingPosition, skill.ratingPosition);
+        City country = (City) o;
+        return Objects.equals(id, country.id) &&
+                Objects.equals(name, country.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, ratingPosition);
+        return Objects.hash(id, name);
     }
 
     @Override
     public String toString() {
-        return "Skill{" +
+        return "City{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", ratingPosition=" + ratingPosition +
                 '}';
     }
 

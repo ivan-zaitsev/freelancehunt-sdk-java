@@ -1,7 +1,7 @@
 package com.github.ivan909020.freelancehunt.sdk.responses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.ivan909020.freelancehunt.sdk.objects.Error;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.Error;
 
 public abstract class ApiResponse {
 

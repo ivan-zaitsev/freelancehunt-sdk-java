@@ -1,7 +1,8 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.*;
 
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
@@ -17,7 +18,7 @@ public class UserDetails {
     private Long id;
 
     @JsonProperty("type")
-    private String type;
+    private EntityType type;
 
     @JsonProperty("attributes")
     private Attributes attributes;
@@ -29,7 +30,7 @@ public class UserDetails {
         return id;
     }
 
-    public String getType() {
+    public EntityType getType() {
         return type;
     }
 
@@ -41,10 +42,10 @@ public class UserDetails {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UserDetails profile = (UserDetails) o;
-        return Objects.equals(id, profile.id) &&
-                Objects.equals(type, profile.type) &&
-                Objects.equals(attributes, profile.attributes);
+        UserDetails that = (UserDetails) o;
+        return Objects.equals(id, that.id) &&
+                type == that.type &&
+                Objects.equals(attributes, that.attributes);
     }
 
     @Override
@@ -56,7 +57,7 @@ public class UserDetails {
     public String toString() {
         return "UserDetails{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", attributes=" + attributes +
                 '}';
     }

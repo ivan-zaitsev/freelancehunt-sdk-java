@@ -1,7 +1,7 @@
 package com.github.ivan909020.freelancehunt.sdk.responses.get;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.ivan909020.freelancehunt.sdk.objects.City;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.City;
 import com.github.ivan909020.freelancehunt.sdk.responses.ApiResponse;
 
 import java.util.List;

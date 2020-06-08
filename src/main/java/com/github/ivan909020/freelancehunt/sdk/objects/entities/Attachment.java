@@ -1,6 +1,7 @@
-package com.github.ivan909020.freelancehunt.sdk.objects;
+package com.github.ivan909020.freelancehunt.sdk.objects.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.EntityType;
 
 import java.util.Objects;
 
@@ -10,7 +11,7 @@ public class Attachment {
     private Long id;
 
     @JsonProperty("type")
-    private String type;
+    private EntityType type;
 
     @JsonProperty("file_type")
     private String fileType;
@@ -34,7 +35,7 @@ public class Attachment {
         return id;
     }
 
-    public String getType() {
+    public EntityType getType() {
         return type;
     }
 
@@ -64,7 +65,7 @@ public class Attachment {
         if (o == null || getClass() != o.getClass()) return false;
         Attachment that = (Attachment) o;
         return Objects.equals(id, that.id) &&
-                Objects.equals(type, that.type) &&
+                type == that.type &&
                 Objects.equals(fileType, that.fileType) &&
                 Objects.equals(size, that.size) &&
                 Objects.equals(name, that.name) &&
@@ -81,7 +82,7 @@ public class Attachment {
     public String toString() {
         return "Attachment{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", fileType='" + fileType + '\'' +
                 ", size=" + size +
                 ", name='" + name + '\'' +

@@ -1,6 +1,6 @@
 package com.github.ivan909020.freelancehunt.sdk.exceptions;
 
-import com.github.ivan909020.freelancehunt.sdk.objects.Error;
+import com.github.ivan909020.freelancehunt.sdk.objects.models.Error;
 
 public class ApiRequestException extends ApiException {
 
