@@ -11,12 +11,18 @@ import java.util.stream.Collectors;
 
 public class GetOpenProjectsRequest extends GetApiRequest<GetOpenProjectsResponse> {
 
+    private Integer pageNumber;
     private Integer onlyMySkills;
     private List<Integer> skillIds;
     private Long employerId;
     private Integer onlyForPlus;
 
     public GetOpenProjectsRequest() {
+    }
+
+    public GetOpenProjectsRequest setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        return this;
     }
 
     public GetOpenProjectsRequest setOnlyMySkills(Integer onlyMySkills) {
@@ -47,6 +53,9 @@ public class GetOpenProjectsRequest extends GetApiRequest<GetOpenProjectsRespons
     @Override
     public Map<String, Object> getParameters() {
         Map<String, Object> parameters = new HashMap<>();
+        if (pageNumber != null) {
+            parameters.put("page[number]", pageNumber);
+        }
         if (onlyMySkills != null) {
             parameters.put("filter[only_my_skills]", onlyMySkills);
         }

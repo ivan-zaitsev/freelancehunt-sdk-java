@@ -11,10 +11,16 @@ import java.util.stream.Collectors;
 
 public class GetMyEmployerProjectsRequest extends GetApiRequest<GetMyEmployerProjectsResponse> {
 
+    private Integer pageNumber;
     private List<Integer> skillIds;
     private Integer statusId;
 
     public GetMyEmployerProjectsRequest() {
+    }
+
+    public GetMyEmployerProjectsRequest setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        return this;
     }
 
     public GetMyEmployerProjectsRequest setSkillIds(List<Integer> skillIds) {
@@ -35,6 +41,9 @@ public class GetMyEmployerProjectsRequest extends GetApiRequest<GetMyEmployerPro
     @Override
     public Map<String, Object> getParameters() {
         Map<String, Object> parameters = new HashMap<>();
+        if (pageNumber != null) {
+            parameters.put("page[number]", pageNumber);
+        }
         if (skillIds != null && !skillIds.isEmpty()) {
             parameters.put("filter[skill_id]", skillIds.stream().map(String::valueOf).collect(Collectors.joining(",")));
         }
