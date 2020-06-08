@@ -49,13 +49,13 @@ public class GetEmployersRequest extends GetApiRequest<GetEmployersResponse> {
             parameters.put("page[number]", pageNumber);
         }
         if (countryId != null) {
-            parameters.put("country_id", countryId);
+            parameters.put("filter[country_id]", countryId);
         }
         if (cityId != null) {
-            parameters.put("city_id", cityId);
+            parameters.put("filter[city_id]", cityId);
         }
         if (login != null) {
-            parameters.put("login", login);
+            parameters.put("filter[login]", login);
         }
         return parameters;
     }

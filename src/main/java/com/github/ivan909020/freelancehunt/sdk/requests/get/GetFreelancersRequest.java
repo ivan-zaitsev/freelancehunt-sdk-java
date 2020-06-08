@@ -57,16 +57,16 @@ public class GetFreelancersRequest extends GetApiRequest<GetFreelancersResponse>
             parameters.put("page[number]", pageNumber);
         }
         if (countryId != null) {
-            parameters.put("country_id", countryId);
+            parameters.put("filter[country_id]", countryId);
         }
         if (cityId != null) {
-            parameters.put("city_id", cityId);
+            parameters.put("filter[city_id]", cityId);
         }
         if (skillIds != null && !skillIds.isEmpty()) {
-            parameters.put("skill_id", skillIds.stream().map(String::valueOf).collect(Collectors.joining(",")));
+            parameters.put("filter[skill_id]", skillIds.stream().map(String::valueOf).collect(Collectors.joining(",")));
         }
         if (login != null) {
-            parameters.put("login", login);
+            parameters.put("filter[login]", login);
         }
         return parameters;
     }

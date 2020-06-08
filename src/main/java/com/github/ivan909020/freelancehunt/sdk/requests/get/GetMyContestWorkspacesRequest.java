@@ -37,7 +37,7 @@ public class GetMyContestWorkspacesRequest extends GetApiRequest<GetMyContestWor
             parameters.put("page[number]", pageNumber);
         }
         if (contestId != null) {
-            parameters.put("contest_id", contestId);
+            parameters.put("filter[contest_id]", contestId);
         }
         return parameters;
     }

@@ -45,10 +45,10 @@ public class GetContestsRequest extends GetApiRequest<GetContestsResponse> {
             parameters.put("page[number]", pageNumber);
         }
         if (skillIds != null && !skillIds.isEmpty()) {
-            parameters.put("skill_id", skillIds.stream().map(String::valueOf).collect(Collectors.joining(",")));
+            parameters.put("filter[skill_id]", skillIds.stream().map(String::valueOf).collect(Collectors.joining(",")));
         }
         if (employerId != null) {
-            parameters.put("employer_id", employerId);
+            parameters.put("filter[employer_id]", employerId);
         }
         return parameters;
     }
