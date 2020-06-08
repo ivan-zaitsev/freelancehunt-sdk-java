@@ -10,7 +10,7 @@ public class Budget {
     private Integer amount;
 
     @JsonProperty("currency")
-    private String currency;
+    private Currency currency;
 
     public Budget() {
     }
@@ -24,11 +24,11 @@ public class Budget {
         return this;
     }
 
-    public String getCurrency() {
+    public Currency getCurrency() {
         return currency;
     }
 
-    public Budget setCurrency(String currency) {
+    public Budget setCurrency(Currency currency) {
         this.currency = currency;
         return this;
     }
@@ -39,7 +39,7 @@ public class Budget {
         if (o == null || getClass() != o.getClass()) return false;
         Budget budget = (Budget) o;
         return Objects.equals(amount, budget.amount) &&
-                Objects.equals(currency, budget.currency);
+                currency == budget.currency;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Budget {
     public String toString() {
         return "Budget{" +
                 "amount=" + amount +
-                ", currency='" + currency + '\'' +
+                ", currency=" + currency +
                 '}';
     }
 
