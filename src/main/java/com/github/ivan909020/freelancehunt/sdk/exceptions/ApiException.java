@@ -12,6 +12,10 @@ public class ApiException extends RuntimeException {
         super(message, cause);
     }
 
+    public String getRequestUrl() {
+        return requestUrl;
+    }
+
     public ApiException setRequestPath(String requestUrl) {
         this.requestUrl = requestUrl;
         return this;
