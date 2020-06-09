@@ -1,9 +1,11 @@
 package com.github.ivan909020.freelancehunt.sdk.objects.models;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Grades {
 
     @JsonProperty("connectivity")
@@ -40,36 +42,81 @@ public class Grades {
         return connectivity;
     }
 
+    public Grades setConnectivity(Integer connectivity) {
+        this.connectivity = connectivity;
+        return this;
+    }
+
     public Integer getDefinition() {
         return definition;
+    }
+
+    public Grades setDefinition(Integer definition) {
+        this.definition = definition;
+        return this;
     }
 
     public Integer getPay() {
         return pay;
     }
 
+    public Grades setPay(Integer pay) {
+        this.pay = pay;
+        return this;
+    }
+
     public Integer getRequirements() {
         return requirements;
+    }
+
+    public Grades setRequirements(Integer requirements) {
+        this.requirements = requirements;
+        return this;
     }
 
     public Integer getQuality() {
         return quality;
     }
 
+    public Grades setQuality(Integer quality) {
+        this.quality = quality;
+        return this;
+    }
+
     public Integer getProfessionalism() {
         return professionalism;
+    }
+
+    public Grades setProfessionalism(Integer professionalism) {
+        this.professionalism = professionalism;
+        return this;
     }
 
     public Integer getCost() {
         return cost;
     }
 
+    public Grades setCost(Integer cost) {
+        this.cost = cost;
+        return this;
+    }
+
     public Integer getSchedule() {
         return schedule;
     }
 
+    public Grades setSchedule(Integer schedule) {
+        this.schedule = schedule;
+        return this;
+    }
+
     public Float getTotal() {
         return total;
+    }
+
+    public Grades setTotal(Float total) {
+        this.total = total;
+        return this;
     }
 
     @Override

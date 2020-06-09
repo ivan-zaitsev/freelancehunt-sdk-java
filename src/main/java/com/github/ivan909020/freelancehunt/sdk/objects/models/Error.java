@@ -26,6 +26,10 @@ public class Error {
         return title;
     }
 
+    public String getDetail() {
+        return detail;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
