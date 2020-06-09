@@ -8,7 +8,7 @@ import com.github.ivan909020.freelancehunt.sdk.objects.models.Participants;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
-import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_PATTERN;
+import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_TIME_PATTERN;
 
 public class Thread {
 
@@ -66,11 +66,11 @@ public class Thread {
         private String subject;
 
         @JsonProperty("first_post_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_PATTERN)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
         private ZonedDateTime firstPostAt;
 
         @JsonProperty("last_post_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_PATTERN)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
         private ZonedDateTime lastPostAt;
 
         @JsonProperty("messages_count")

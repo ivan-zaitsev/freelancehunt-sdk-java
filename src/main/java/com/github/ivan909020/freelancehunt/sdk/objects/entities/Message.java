@@ -9,7 +9,7 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Objects;
 
-import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_PATTERN;
+import static com.github.ivan909020.freelancehunt.sdk.client.ObjectMapperConfig.DATE_TIME_PATTERN;
 
 public class Message {
 
@@ -70,7 +70,7 @@ public class Message {
         private String messageHtml;
 
         @JsonProperty("posted_at")
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_PATTERN)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
         private ZonedDateTime postedAt;
 
         @JsonProperty("attachments")
