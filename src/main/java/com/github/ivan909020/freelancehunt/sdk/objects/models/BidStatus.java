@@ -11,6 +11,11 @@ public enum BidStatus {
     REVOKED,
 
     @JsonProperty("rejected")
-    REJECTED
+    REJECTED;
+
+    @Override
+    public String toString() {
+        return name().toLowerCase();
+    }
 
 }

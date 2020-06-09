@@ -14,6 +14,11 @@ public enum SafeType {
     SPLIT,
 
     @JsonProperty("employer_cashless")
-    EMPLOYER_CASHLESS
+    EMPLOYER_CASHLESS;
+
+    @Override
+    public String toString() {
+        return name().toLowerCase();
+    }
 
 }

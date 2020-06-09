@@ -63,7 +63,7 @@ public class AddProjectBidRequest extends PostApiRequest<AddProjectBidResponse> 
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("days", days);
         parameters.put("budget", budget);
-        parameters.put("safe_type", safeType != null ? safeType.toString().toLowerCase() : null);
+        parameters.put("safe_type", safeType);
         parameters.put("comment", comment);
         parameters.put("is_hidden", isHidden);
         return parameters;

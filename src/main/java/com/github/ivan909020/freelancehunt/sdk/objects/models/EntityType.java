@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum EntityType {
 
-    @JsonProperty("project")
-    PROJECT,
-
     @JsonProperty("freelancer")
     FREELANCER,
 
@@ -22,13 +19,27 @@ public enum EntityType {
     @JsonProperty("thread")
     THREAD,
 
+    @JsonProperty("project")
+    PROJECT,
+
+    @JsonProperty("project_workspace")
+    PROJECT_WORKSPACE,
+
     @JsonProperty("contest")
     CONTEST,
+
+    @JsonProperty("contest_workspace")
+    CONTEST_WORKSPACE,
 
     @JsonProperty("message")
     MESSAGE,
 
     @JsonProperty("attachment")
-    ATTACHMENT
+    ATTACHMENT;
+
+    @Override
+    public String toString() {
+        return name().toLowerCase();
+    }
 
 }

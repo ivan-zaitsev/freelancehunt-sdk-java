@@ -79,7 +79,7 @@ public class UpdateProjectRequest extends PatchApiRequest<UpdateProjectResponse>
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("name", name);
         parameters.put("budget", budget);
-        parameters.put("safe_type", safeType != null ? safeType.toString().toLowerCase() : null);
+        parameters.put("safe_type", safeType);
         parameters.put("description_html", descriptionHtml);
         parameters.put("skills", skills);
         parameters.put("expired_at", expiredAt.format(DateTimeFormatter.ofPattern(DATE_TIME_PATTERN)));

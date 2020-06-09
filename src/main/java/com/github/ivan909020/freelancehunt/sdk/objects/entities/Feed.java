@@ -74,6 +74,9 @@ public class Feed {
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
         private ZonedDateTime createdAt;
 
+        public Attributes() {
+        }
+
         public User getFrom() {
             return from;
         }
