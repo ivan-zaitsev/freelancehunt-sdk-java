@@ -1,9 +1,9 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.get;
+package com.github.ivan909020.freelancehunt.sdk.requests.cities;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import com.github.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.get.GetCitiesResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.cities.GetCitiesResponse;
 
 public class GetCitiesRequest extends GetApiRequest<GetCitiesResponse> {
 

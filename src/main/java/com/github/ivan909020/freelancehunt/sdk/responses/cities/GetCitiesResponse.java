@@ -1,4 +1,4 @@
-package com.github.ivan909020.freelancehunt.sdk.responses.get;
+package com.github.ivan909020.freelancehunt.sdk.responses.cities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.ivan909020.freelancehunt.sdk.objects.models.City;
