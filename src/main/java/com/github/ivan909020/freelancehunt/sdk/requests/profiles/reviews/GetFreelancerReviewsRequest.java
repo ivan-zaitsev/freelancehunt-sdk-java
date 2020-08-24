@@ -1,34 +1,34 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.get;
+package com.github.ivan909020.freelancehunt.sdk.requests.profiles.reviews;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import com.github.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.get.GetEmployerReviewsResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.profiles.reviews.GetFreelancerReviewsResponse;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetEmployerReviewsRequest extends GetApiRequest<GetEmployerReviewsResponse> {
+public class GetFreelancerReviewsRequest extends GetApiRequest<GetFreelancerReviewsResponse> {
 
     private Integer pageNumber;
-    private Long employerId;
+    private Long freelancerId;
 
-    public GetEmployerReviewsRequest() {
+    public GetFreelancerReviewsRequest() {
     }
 
-    public GetEmployerReviewsRequest setPageNumber(Integer pageNumber) {
+    public GetFreelancerReviewsRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;
     }
 
-    public GetEmployerReviewsRequest setEmployerId(Long employerId) {
-        this.employerId = employerId;
+    public GetFreelancerReviewsRequest setFreelancerId(Long freelancerId) {
+        this.freelancerId = freelancerId;
         return this;
     }
 
     @Override
     public String getUrlPath() {
-        return "employers/" + employerId + "/reviews";
+        return "freelancers/" + freelancerId + "/reviews";
     }
 
     @Override
@@ -43,15 +43,15 @@ public class GetEmployerReviewsRequest extends GetApiRequest<GetEmployerReviewsR
     @Override
     public void validate() {
         super.validate();
-        if (employerId == null) {
-            throw new ApiValidationException("EmployerId parameter can't be empty");
+        if (freelancerId == null) {
+            throw new ApiValidationException("FreelancerId parameter can't be empty");
         }
     }
 
     @Override
-    public GetEmployerReviewsResponse deserializeResponse(String responseContent) {
+    public GetFreelancerReviewsResponse deserializeResponse(String responseContent) {
         try {
-            return deserializeResponse(responseContent, GetEmployerReviewsResponse.class);
+            return deserializeResponse(responseContent, GetFreelancerReviewsResponse.class);
         } catch (ApiException e) {
             throw e.setRequestPath(getUrl());
         }

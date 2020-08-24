@@ -1,53 +1,45 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.get;
+package com.github.ivan909020.freelancehunt.sdk.requests.profiles;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.get.GetFreelancersResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.profiles.GetEmployersResponse;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
-public class GetFreelancersRequest extends GetApiRequest<GetFreelancersResponse> {
+public class GetEmployersRequest extends GetApiRequest<GetEmployersResponse> {
 
     private Integer pageNumber;
     private Long countryId;
     private Long cityId;
-    private List<Integer> skillIds;
     private String login;
 
-    public GetFreelancersRequest() {
+    public GetEmployersRequest() {
     }
 
-    public GetFreelancersRequest setPageNumber(Integer pageNumber) {
+    public GetEmployersRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;
     }
 
-    public GetFreelancersRequest setCountryId(Long countryId) {
+    public GetEmployersRequest setCountryId(Long countryId) {
         this.countryId = countryId;
         return this;
     }
 
-    public GetFreelancersRequest setCityId(Long cityId) {
+    public GetEmployersRequest setCityId(Long cityId) {
         this.cityId = cityId;
         return this;
     }
 
-    public GetFreelancersRequest setSkillIds(List<Integer> skillIds) {
-        this.skillIds = skillIds;
-        return this;
-    }
-
-    public GetFreelancersRequest setLogin(String login) {
+    public GetEmployersRequest setLogin(String login) {
         this.login = login;
         return this;
     }
 
     @Override
     public String getUrlPath() {
-        return "freelancers";
+        return "employers";
     }
 
     @Override
@@ -62,9 +54,6 @@ public class GetFreelancersRequest extends GetApiRequest<GetFreelancersResponse>
         if (cityId != null) {
             parameters.put("filter[city_id]", cityId);
         }
-        if (skillIds != null && !skillIds.isEmpty()) {
-            parameters.put("filter[skill_id]", skillIds.stream().map(String::valueOf).collect(Collectors.joining(",")));
-        }
         if (login != null) {
             parameters.put("filter[login]", login);
         }
@@ -72,9 +61,9 @@ public class GetFreelancersRequest extends GetApiRequest<GetFreelancersResponse>
     }
 
     @Override
-    public GetFreelancersResponse deserializeResponse(String responseContent) {
+    public GetEmployersResponse deserializeResponse(String responseContent) {
         try {
-            return deserializeResponse(responseContent, GetFreelancersResponse.class);
+            return deserializeResponse(responseContent, GetEmployersResponse.class);
         } catch (ApiException e) {
             throw e.setRequestPath(getUrl());
         }

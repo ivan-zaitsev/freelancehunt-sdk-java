@@ -1,8 +1,8 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.get;
+package com.github.ivan909020.freelancehunt.sdk.requests.profiles;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.get.GetMyProfileResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.profiles.GetMyProfileResponse;
 
 public class GetMyProfileRequest extends GetApiRequest<GetMyProfileResponse> {
 
