@@ -1,4 +1,4 @@
-package com.github.ivan909020.freelancehunt.sdk.responses.patch;
+package com.github.ivan909020.freelancehunt.sdk.responses.contests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.ivan909020.freelancehunt.sdk.objects.entities.ContestDetails;

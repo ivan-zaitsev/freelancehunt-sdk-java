@@ -1,8 +1,8 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.get;
+package com.github.ivan909020.freelancehunt.sdk.requests.contests.workspaces;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.get.GetMyContestWorkspacesResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.contests.workspaces.GetMyContestWorkspacesResponse;
 
 import java.util.HashMap;
 import java.util.Map;

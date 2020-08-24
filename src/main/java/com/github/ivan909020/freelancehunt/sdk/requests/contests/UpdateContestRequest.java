@@ -1,10 +1,10 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.patch;
+package com.github.ivan909020.freelancehunt.sdk.requests.contests;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import com.github.ivan909020.freelancehunt.sdk.objects.models.Budget;
 import com.github.ivan909020.freelancehunt.sdk.requests.PatchApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.patch.UpdateContestResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.contests.UpdateContestResponse;
 
 import java.util.HashMap;
 import java.util.List;

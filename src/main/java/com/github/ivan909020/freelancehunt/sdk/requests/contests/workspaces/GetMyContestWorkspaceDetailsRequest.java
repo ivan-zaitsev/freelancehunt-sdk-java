@@ -1,9 +1,9 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.get;
+package com.github.ivan909020.freelancehunt.sdk.requests.contests.workspaces;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import com.github.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.get.GetMyContestWorkspaceDetailsResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.contests.workspaces.GetMyContestWorkspaceDetailsResponse;
 
 public class GetMyContestWorkspaceDetailsRequest extends GetApiRequest<GetMyContestWorkspaceDetailsResponse> {
 

@@ -1,9 +1,9 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.post;
+package com.github.ivan909020.freelancehunt.sdk.requests.contests.workspaces;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import com.github.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.post.CompleteMyContestWorkspaceResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.contests.workspaces.CompleteMyContestWorkspaceResponse;
 
 import java.util.Collections;
 import java.util.Map;
