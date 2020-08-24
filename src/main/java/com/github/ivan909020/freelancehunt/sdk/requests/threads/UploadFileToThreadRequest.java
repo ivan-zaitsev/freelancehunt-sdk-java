@@ -1,9 +1,9 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.post;
+package com.github.ivan909020.freelancehunt.sdk.requests.threads;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import com.github.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.post.UploadFileToThreadResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.threads.UploadFileToThreadResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;

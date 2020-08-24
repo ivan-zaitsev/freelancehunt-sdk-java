@@ -1,9 +1,9 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.get;
+package com.github.ivan909020.freelancehunt.sdk.requests.threads;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import com.github.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.get.GetThreadMessagesResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.threads.GetThreadMessagesResponse;
 
 public class GetThreadMessagesRequest extends GetApiRequest<GetThreadMessagesResponse> {
 

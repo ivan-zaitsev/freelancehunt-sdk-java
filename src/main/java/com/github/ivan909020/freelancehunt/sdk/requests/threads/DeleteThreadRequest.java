@@ -1,9 +1,9 @@
-package com.github.ivan909020.freelancehunt.sdk.requests.delete;
+package com.github.ivan909020.freelancehunt.sdk.requests.threads;
 
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import com.github.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import com.github.ivan909020.freelancehunt.sdk.requests.DeleteApiRequest;
-import com.github.ivan909020.freelancehunt.sdk.responses.delete.DeleteThreadResponse;
+import com.github.ivan909020.freelancehunt.sdk.responses.threads.DeleteThreadResponse;
 
 public class DeleteThreadRequest extends DeleteApiRequest<DeleteThreadResponse> {
 
