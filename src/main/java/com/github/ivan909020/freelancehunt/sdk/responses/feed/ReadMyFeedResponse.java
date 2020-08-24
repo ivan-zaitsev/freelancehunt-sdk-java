@@ -1,4 +1,4 @@
-package com.github.ivan909020.freelancehunt.sdk.responses.post;
+package com.github.ivan909020.freelancehunt.sdk.responses.feed;
 
 import com.github.ivan909020.freelancehunt.sdk.responses.ApiResponse;
 
