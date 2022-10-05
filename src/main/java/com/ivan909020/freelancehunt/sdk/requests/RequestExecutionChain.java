@@ -6,7 +6,7 @@ import java.net.URL;
 import java.util.Iterator;
 
 import com.ivan909020.freelancehunt.sdk.configs.HttpClientConfig;
-import com.ivan909020.freelancehunt.sdk.iterceptors.ApiRequestInterceptior;
+import com.ivan909020.freelancehunt.sdk.interceptors.ApiRequestInterceptior;
 import com.ivan909020.freelancehunt.sdk.objects.http.HttpRequest;
 import com.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
 

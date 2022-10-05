@@ -1,4 +1,4 @@
-package com.ivan909020.freelancehunt.sdk.iterceptors;
+package com.ivan909020.freelancehunt.sdk.interceptors;
 
 import java.io.IOException;
 

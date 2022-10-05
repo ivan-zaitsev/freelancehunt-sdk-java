@@ -3,7 +3,7 @@ package com.ivan909020.freelancehunt.sdk;
 import com.ivan909020.freelancehunt.sdk.configs.ApiConfig;
 import com.ivan909020.freelancehunt.sdk.configs.HttpClientConfig;
 import com.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import com.ivan909020.freelancehunt.sdk.iterceptors.DefaultHeadersRequestInterceptior;
+import com.ivan909020.freelancehunt.sdk.interceptors.DefaultHeadersRequestInterceptior;
 
 public class ApiClientBuilder {
 

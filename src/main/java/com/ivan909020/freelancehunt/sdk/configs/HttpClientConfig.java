@@ -3,7 +3,7 @@ package com.ivan909020.freelancehunt.sdk.configs;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ivan909020.freelancehunt.sdk.iterceptors.ApiRequestInterceptior;
+import com.ivan909020.freelancehunt.sdk.interceptors.ApiRequestInterceptior;
 
 public class HttpClientConfig {
 
