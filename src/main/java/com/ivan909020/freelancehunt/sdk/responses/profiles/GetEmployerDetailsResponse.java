@@ -1,0 +1,19 @@
+package com.ivan909020.freelancehunt.sdk.responses.profiles;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.ivan909020.freelancehunt.sdk.objects.entities.UserDetails;
+import com.ivan909020.freelancehunt.sdk.responses.ApiResponse;
+
+public class GetEmployerDetailsResponse extends ApiResponse {
+
+    @JsonProperty("data")
+    private UserDetails employer;
+
+    public GetEmployerDetailsResponse() {
+    }
+
+    public UserDetails getEmployer() {
+        return employer;
+    }
+
+}
