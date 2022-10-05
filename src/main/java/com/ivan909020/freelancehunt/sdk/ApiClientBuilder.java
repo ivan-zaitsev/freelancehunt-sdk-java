@@ -37,8 +37,8 @@ public class ApiClientBuilder {
         if (apiConfig == null) {
             throw new ApiValidationException("ApiConfig must not be null");
         }
-        if (apiConfig == null) {
-            throw new ApiValidationException("ApiConfig must not be null");
+        if (httpClientConfig == null) {
+            throw new ApiValidationException("HttpClientConfig must not be null");
         }
     }
 
