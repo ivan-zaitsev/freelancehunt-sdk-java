@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ivan909020</groupId>
+    <groupId>ua.ivan909020</groupId>
     <artifactId>freelancehunt-sdk-java</artifactId>
     <version>1.1.0</version>
     <packaging>jar</packaging>
@@ -15,7 +15,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <fasterxml.jackson.version>2.14.0-rc1</fasterxml.jackson.version>
+        <fasterxml.jackson.version>2.14.1</fasterxml.jackson.version>
         <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
     </properties>
 
