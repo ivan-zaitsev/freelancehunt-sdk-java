@@ -5,8 +5,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.configs.ApiConfig;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
-import ua.ivan909020.freelancehunt.sdk.requests.ApiRequest;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.requests.RequestContext;
 import ua.ivan909020.freelancehunt.sdk.requests.RequestExecutionChain;
 
 public class DefaultHeadersRequestInterceptior implements ApiRequestInterceptior {
@@ -18,15 +18,14 @@ public class DefaultHeadersRequestInterceptior implements ApiRequestInterceptior
     }
 
     @Override
-    public HttpResponse process(RequestExecutionChain chain, ApiRequest<?> request) throws IOException {
+    public HttpResponse process(RequestExecutionChain chain, RequestContext context) throws IOException {
         Map<String, String> headers = new LinkedHashMap<>();
         headers.put("Authorization", "Bearer " + apiConfig.getApiToken());
         headers.put("Accept-Language", apiConfig.getLanguage());
         headers.put("Content-Type", "application/json");
 
-        request.getEntity().addHeaders(headers);
-
-        return chain.execute(request);
+        context.getRequest().getEntity().addHeaders(headers);
+        return chain.execute(context);
     }
 
 }

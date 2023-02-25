@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.workspaces.ProjectWorkspaceArbitrageResponse;
 
@@ -45,8 +45,7 @@ public class ProjectWorkspaceArbitrageRequest extends PostApiRequest<ProjectWork
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
@@ -56,7 +55,7 @@ public class ProjectWorkspaceArbitrageRequest extends PostApiRequest<ProjectWork
     }
 
     @Override
-    public ProjectWorkspaceArbitrageResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected ProjectWorkspaceArbitrageResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, ProjectWorkspaceArbitrageResponse.class);
     }
 

@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.objects.models.Budget;
 import ua.ivan909020.freelancehunt.sdk.objects.models.SafeType;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.bids.AddProjectBidResponse;
 
@@ -78,8 +78,7 @@ public class AddProjectBidRequest extends PostApiRequest<AddProjectBidResponse> 
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
@@ -101,7 +100,7 @@ public class AddProjectBidRequest extends PostApiRequest<AddProjectBidResponse> 
     }
 
     @Override
-    public AddProjectBidResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected AddProjectBidResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, AddProjectBidResponse.class);
     }
 

@@ -1,6 +1,6 @@
 package ua.ivan909020.freelancehunt.sdk.requests.projects.update;
 
-import static ua.ivan909020.freelancehunt.sdk.configs.ObjectMapperConfig.DATE_TIME_PATTERN;
+import static ua.ivan909020.freelancehunt.sdk.utils.DateUtils.DATE_TIME_PATTERN;
 
 import java.io.IOException;
 import java.time.ZonedDateTime;
@@ -8,8 +8,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.update.ExtendProjectExpireDateResponse;
 
@@ -49,8 +49,7 @@ public class ExtendProjectExpireDateRequest extends PostApiRequest<ExtendProject
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
@@ -60,7 +59,7 @@ public class ExtendProjectExpireDateRequest extends PostApiRequest<ExtendProject
     }
 
     @Override
-    public ExtendProjectExpireDateResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected ExtendProjectExpireDateResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, ExtendProjectExpireDateResponse.class);
     }
 

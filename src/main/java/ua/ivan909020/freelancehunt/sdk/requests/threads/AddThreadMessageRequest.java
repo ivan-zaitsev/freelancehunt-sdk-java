@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.threads.AddThreadMessageResponse;
 
@@ -45,8 +45,7 @@ public class AddThreadMessageRequest extends PostApiRequest<AddThreadMessageResp
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (threadId == null) {
             throw new ApiValidationException("ThreadId parameter can't be empty");
         }
@@ -56,7 +55,7 @@ public class AddThreadMessageRequest extends PostApiRequest<AddThreadMessageResp
     }
 
     @Override
-    public AddThreadMessageResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected AddThreadMessageResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, AddThreadMessageResponse.class);
     }
 

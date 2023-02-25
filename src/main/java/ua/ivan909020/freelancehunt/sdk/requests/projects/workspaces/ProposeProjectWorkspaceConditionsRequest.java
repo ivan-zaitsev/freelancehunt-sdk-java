@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.objects.models.Budget;
 import ua.ivan909020.freelancehunt.sdk.objects.models.SafeType;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.workspaces.ProposeProjectWorkspaceConditionsResponse;
 
@@ -72,8 +72,7 @@ public class ProposeProjectWorkspaceConditionsRequest
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
@@ -92,7 +91,7 @@ public class ProposeProjectWorkspaceConditionsRequest
     }
 
     @Override
-    public ProposeProjectWorkspaceConditionsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected ProposeProjectWorkspaceConditionsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, ProposeProjectWorkspaceConditionsResponse.class);
     }
 

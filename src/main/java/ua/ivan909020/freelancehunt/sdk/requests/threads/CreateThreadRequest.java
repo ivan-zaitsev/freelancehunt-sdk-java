@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.threads.CreateThreadResponse;
 
@@ -56,8 +56,7 @@ public class CreateThreadRequest extends PostApiRequest<CreateThreadResponse> {
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (subject == null) {
             throw new ApiValidationException("Subject parameter can't be empty");
         }
@@ -70,7 +69,7 @@ public class CreateThreadRequest extends PostApiRequest<CreateThreadResponse> {
     }
 
     @Override
-    public CreateThreadResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected CreateThreadResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, CreateThreadResponse.class);
     }
 

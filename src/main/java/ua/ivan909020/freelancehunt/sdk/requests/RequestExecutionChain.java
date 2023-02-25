@@ -7,8 +7,8 @@ import java.util.Iterator;
 
 import ua.ivan909020.freelancehunt.sdk.configs.HttpClientConfig;
 import ua.ivan909020.freelancehunt.sdk.interceptors.ApiRequestInterceptior;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpRequest;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.HttpRequest;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 
 public class RequestExecutionChain {
 
@@ -21,11 +21,11 @@ public class RequestExecutionChain {
         this.interceptors = httpClientConfig.getInterceptors().iterator();
     }
 
-    public HttpResponse execute(ApiRequest<?> request) throws IOException {
+    public HttpResponse execute(RequestContext context) throws IOException {
         if (interceptors.hasNext()) {
-            return interceptors.next().process(this, request);
+            return interceptors.next().process(this, context);
         } else {
-            return executeInternal(request);
+            return executeInternal(context.getRequest());
         }
     }
 

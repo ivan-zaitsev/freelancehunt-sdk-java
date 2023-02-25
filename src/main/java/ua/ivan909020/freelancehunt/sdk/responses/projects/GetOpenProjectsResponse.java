@@ -1,11 +1,11 @@
 package ua.ivan909020.freelancehunt.sdk.responses.projects;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import ua.ivan909020.freelancehunt.sdk.objects.entities.ProjectDetails;
 import ua.ivan909020.freelancehunt.sdk.responses.ApiResponse;
-
-import java.util.List;
 
 public class GetOpenProjectsResponse extends ApiResponse {
 

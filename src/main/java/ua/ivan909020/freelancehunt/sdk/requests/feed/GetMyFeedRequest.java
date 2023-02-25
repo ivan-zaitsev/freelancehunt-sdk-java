@@ -2,8 +2,8 @@ package ua.ivan909020.freelancehunt.sdk.requests.feed;
 
 import java.io.IOException;
 
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.feed.GetMyFeedResponse;
 
@@ -26,7 +26,7 @@ public class GetMyFeedRequest extends GetApiRequest<GetMyFeedResponse> {
     }
 
     @Override
-    public GetMyFeedResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetMyFeedResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetMyFeedResponse.class);
     }
 

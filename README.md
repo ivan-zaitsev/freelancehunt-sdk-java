@@ -19,10 +19,10 @@ HttpClientConfig httpClientConfig = new HttpClientConfig();
 httpClientConfig.setConnectionTimeout(30_000);
 httpClientConfig.setSocketTimeout(30_000);
 
-ApiClientBuilder apiClientBuilder = new ApiClientBuilder();
-apiClientBuilder.setApiConfig(apiConfig);
-apiClientBuilder.setHttpClientConfig(httpClientConfig);
-ApiClient apiClient = apiClientBuilder.build();
+ApiClient apiClient = ApiClient.builder()
+    .setApiConfig(apiConfig)
+    .setHttpClientConfig(httpClientConfig)
+    .build();
 
 GetCitiesResponse citiesResponse = apiClient.sendRequest(new GetCitiesRequest().setCountryId(1L));
 for (City city : citiesResponse.getCities()) {

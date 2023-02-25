@@ -12,9 +12,9 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpRequest;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.HttpRequest;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.threads.UploadFileToThreadResponse;
 import ua.ivan909020.freelancehunt.sdk.utils.StreamUtils;
@@ -89,13 +89,13 @@ public class UploadFileToThreadRequest extends PostApiRequest<UploadFileToThread
     private void appendFileContent(OutputStream outputStream, File file) throws IOException {
         try (FileInputStream inputStream = new FileInputStream(file)) {
             StreamUtils.transfer(inputStream, outputStream);
+        } finally {
+            outputStream.flush();
         }
-        outputStream.flush();
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (threadId == null) {
             throw new ApiValidationException("ThreadId parameter can't be empty");
         }
@@ -105,7 +105,7 @@ public class UploadFileToThreadRequest extends PostApiRequest<UploadFileToThread
     }
 
     @Override
-    public UploadFileToThreadResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected UploadFileToThreadResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, UploadFileToThreadResponse.class);
     }
 

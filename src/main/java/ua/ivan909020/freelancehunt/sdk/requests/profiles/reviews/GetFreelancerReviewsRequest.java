@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.profiles.reviews.GetFreelancerReviewsResponse;
 
@@ -51,15 +51,14 @@ public class GetFreelancerReviewsRequest extends GetApiRequest<GetFreelancerRevi
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (freelancerId == null) {
             throw new ApiValidationException("FreelancerId parameter can't be empty");
         }
     }
 
     @Override
-    public GetFreelancerReviewsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetFreelancerReviewsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetFreelancerReviewsResponse.class);
     }
 

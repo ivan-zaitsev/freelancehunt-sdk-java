@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.bids.ChooseWinnerBidResponse;
 
@@ -51,8 +51,7 @@ public class ChooseWinnerBidRequest extends PostApiRequest<ChooseWinnerBidRespon
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
@@ -65,7 +64,7 @@ public class ChooseWinnerBidRequest extends PostApiRequest<ChooseWinnerBidRespon
     }
 
     @Override
-    public ChooseWinnerBidResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected ChooseWinnerBidResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, ChooseWinnerBidResponse.class);
     }
 

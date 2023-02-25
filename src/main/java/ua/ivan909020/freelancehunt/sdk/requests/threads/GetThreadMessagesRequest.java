@@ -3,8 +3,8 @@ package ua.ivan909020.freelancehunt.sdk.requests.threads;
 import java.io.IOException;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.threads.GetThreadMessagesResponse;
 
@@ -34,15 +34,14 @@ public class GetThreadMessagesRequest extends GetApiRequest<GetThreadMessagesRes
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (threadId == null) {
             throw new ApiValidationException("ThreadId parameter can't be empty");
         }
     }
 
     @Override
-    public GetThreadMessagesResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetThreadMessagesResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetThreadMessagesResponse.class);
     }
 

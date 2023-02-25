@@ -1,9 +1,9 @@
 package ua.ivan909020.freelancehunt.sdk.objects.models;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
-
-import java.util.Objects;
 
 public class Error {
 

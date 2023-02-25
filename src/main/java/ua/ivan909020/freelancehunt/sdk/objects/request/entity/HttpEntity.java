@@ -1,7 +1,6 @@
-package ua.ivan909020.freelancehunt.sdk.objects.http;
+package ua.ivan909020.freelancehunt.sdk.objects.request.entity;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -9,24 +8,25 @@ public class HttpEntity {
 
     private final Map<String, String> headers;
     private final Map<String, Object> urlParameters;
-    private final InputStream content;
+
+    private final HttpEntityContent content;
 
     public HttpEntity() {
         this(new byte[0]);
     }
 
-    public HttpEntity(byte[] content) {
-        this(new ByteArrayInputStream(content));
+    public HttpEntity(byte[] data) {
+        this(new HttpEntityContent(new ByteArrayInputStream(data), data.length));
     }
 
-    public HttpEntity(InputStream content) {
+    public HttpEntity(HttpEntityContent content) {
         this.content = content;
         this.headers = new LinkedHashMap<>();
         this.urlParameters = new LinkedHashMap<>();
     }
-    
-    public Map<String, String> getUrlParameters() {
-        return new LinkedHashMap<>(headers);
+
+    public Map<String, Object> getUrlParameters() {
+        return new LinkedHashMap<>(urlParameters);
     }
 
     public void addUrlParameters(Map<String, Object> urlParameters) {
@@ -49,7 +49,7 @@ public class HttpEntity {
         }
     }
 
-    public InputStream getContent() {
+    public HttpEntityContent getContent() {
         return content;
     }
 

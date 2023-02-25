@@ -1,11 +1,11 @@
 package ua.ivan909020.freelancehunt.sdk.responses.countries;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import ua.ivan909020.freelancehunt.sdk.objects.models.Country;
 import ua.ivan909020.freelancehunt.sdk.responses.ApiResponse;
-
-import java.util.List;
 
 public class GetCountriesResponse extends ApiResponse {
 
