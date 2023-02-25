@@ -50,7 +50,6 @@ public class ResponseDeserializerJson implements ResponseDeserializer {
         if (content.isEmpty()) {
             return "{}";
         }
-
         return content;
     }
 

@@ -89,8 +89,9 @@ public class UploadFileToThreadRequest extends PostApiRequest<UploadFileToThread
     private void appendFileContent(OutputStream outputStream, File file) throws IOException {
         try (FileInputStream inputStream = new FileInputStream(file)) {
             StreamUtils.transfer(inputStream, outputStream);
+        } finally {
+            outputStream.flush();
         }
-        outputStream.flush();
     }
 
     @Override
