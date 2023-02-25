@@ -4,7 +4,7 @@ Java library for Freelancehunt API interaction. Features documentation can be fo
 
 ## Technology stack
 
-Java 8, Maven, FasterXML Jackson
+Java 11, Maven, FasterXML Jackson
 
 ## Usage guide
 
@@ -24,7 +24,11 @@ ApiClient apiClient = ApiClient.builder()
     .setHttpClientConfig(httpClientConfig)
     .build();
 
-GetCitiesResponse citiesResponse = apiClient.sendRequest(new GetCitiesRequest().setCountryId(1L));
+
+GetCitiesRequest citiesRequest = new GetCitiesRequest();
+citiesRequest.setCountryId(1L);
+
+GetCitiesResponse citiesResponse = apiClient.sendRequest(citiesRequest);
 for (City city : citiesResponse.getCities()) {
     System.out.println(city.getName());
 }
