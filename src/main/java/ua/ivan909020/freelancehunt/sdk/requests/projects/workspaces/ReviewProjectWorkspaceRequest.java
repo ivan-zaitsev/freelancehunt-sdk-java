@@ -56,8 +56,7 @@ public class ReviewProjectWorkspaceRequest extends PostApiRequest<CompleteProjec
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
@@ -70,7 +69,7 @@ public class ReviewProjectWorkspaceRequest extends PostApiRequest<CompleteProjec
     }
 
     @Override
-    public CompleteProjectWorkspaceResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected CompleteProjectWorkspaceResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, CompleteProjectWorkspaceResponse.class);
     }
 

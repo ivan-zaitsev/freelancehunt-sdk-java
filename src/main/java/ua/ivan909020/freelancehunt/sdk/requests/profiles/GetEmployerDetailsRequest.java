@@ -34,15 +34,14 @@ public class GetEmployerDetailsRequest extends GetApiRequest<GetEmployerDetailsR
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (employerId == null) {
             throw new ApiValidationException("EmployerId parameter can't be empty");
         }
     }
 
     @Override
-    public GetEmployerDetailsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetEmployerDetailsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetEmployerDetailsResponse.class);
     }
 

@@ -13,10 +13,10 @@ public class HttpResponse {
     }
 
     public InputStream getInputStream() throws IOException {
-        return isErrorResponse() ? connection.getErrorStream() : connection.getInputStream();
+        return isErrorResponseCode() ? connection.getErrorStream() : connection.getInputStream();
     }
     
-    private boolean isErrorResponse() throws IOException {
+    private boolean isErrorResponseCode() throws IOException {
         int series = connection.getResponseCode() / 100;
         return series == 4 || series == 5;
     }

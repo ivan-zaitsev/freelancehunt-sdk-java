@@ -43,7 +43,7 @@ public class GetEmployersRequest extends GetApiRequest<GetEmployersResponse> {
     public String getUrlPath() {
         return "/employers";
     }
-    
+
     @Override
     public HttpEntity getEntity() {
         if (httpEntity == null) {
@@ -69,9 +69,9 @@ public class GetEmployersRequest extends GetApiRequest<GetEmployersResponse> {
         }
         return parameters;
     }
-    
+
     @Override
-    public GetEmployersResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetEmployersResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetEmployersResponse.class);
     }
 

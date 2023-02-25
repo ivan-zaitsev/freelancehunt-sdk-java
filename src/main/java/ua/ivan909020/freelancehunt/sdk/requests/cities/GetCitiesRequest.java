@@ -34,15 +34,14 @@ public class GetCitiesRequest extends GetApiRequest<GetCitiesResponse> {
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (countryId == null) {
             throw new ApiValidationException("CountryId parameter can't be empty");
         }
     }
 
     @Override
-    public GetCitiesResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetCitiesResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetCitiesResponse.class);
     }
 

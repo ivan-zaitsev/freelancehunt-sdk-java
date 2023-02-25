@@ -94,8 +94,7 @@ public class UploadFileToThreadRequest extends PostApiRequest<UploadFileToThread
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (threadId == null) {
             throw new ApiValidationException("ThreadId parameter can't be empty");
         }
@@ -105,7 +104,7 @@ public class UploadFileToThreadRequest extends PostApiRequest<UploadFileToThread
     }
 
     @Override
-    public UploadFileToThreadResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected UploadFileToThreadResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, UploadFileToThreadResponse.class);
     }
 

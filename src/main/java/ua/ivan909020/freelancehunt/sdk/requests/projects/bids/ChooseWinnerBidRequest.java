@@ -51,8 +51,7 @@ public class ChooseWinnerBidRequest extends PostApiRequest<ChooseWinnerBidRespon
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
@@ -65,7 +64,7 @@ public class ChooseWinnerBidRequest extends PostApiRequest<ChooseWinnerBidRespon
     }
 
     @Override
-    public ChooseWinnerBidResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected ChooseWinnerBidResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, ChooseWinnerBidResponse.class);
     }
 

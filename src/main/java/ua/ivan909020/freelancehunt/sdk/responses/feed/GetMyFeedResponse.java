@@ -1,11 +1,11 @@
 package ua.ivan909020.freelancehunt.sdk.responses.feed;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import ua.ivan909020.freelancehunt.sdk.objects.entities.Feed;
 import ua.ivan909020.freelancehunt.sdk.responses.ApiResponse;
-
-import java.util.List;
 
 public class GetMyFeedResponse extends ApiResponse {
 

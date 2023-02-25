@@ -34,15 +34,14 @@ public class GetMyContestWorkspaceDetailsRequest extends GetApiRequest<GetMyCont
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
     }
 
     @Override
-    public GetMyContestWorkspaceDetailsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetMyContestWorkspaceDetailsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetMyContestWorkspaceDetailsResponse.class);
     }
 

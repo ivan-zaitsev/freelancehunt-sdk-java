@@ -64,7 +64,7 @@ public class GetContestsRequest extends GetApiRequest<GetContestsResponse> {
     }
 
     @Override
-    public GetContestsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetContestsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetContestsResponse.class);
     }
 

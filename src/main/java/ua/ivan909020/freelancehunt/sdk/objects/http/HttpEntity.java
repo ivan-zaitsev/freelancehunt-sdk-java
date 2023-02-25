@@ -25,8 +25,8 @@ public class HttpEntity {
         this.urlParameters = new LinkedHashMap<>();
     }
     
-    public Map<String, String> getUrlParameters() {
-        return new LinkedHashMap<>(headers);
+    public Map<String, Object> getUrlParameters() {
+        return new LinkedHashMap<>(urlParameters);
     }
 
     public void addUrlParameters(Map<String, Object> urlParameters) {

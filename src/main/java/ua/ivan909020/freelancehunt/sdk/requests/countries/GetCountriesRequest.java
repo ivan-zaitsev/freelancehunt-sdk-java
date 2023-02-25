@@ -26,7 +26,7 @@ public class GetCountriesRequest extends GetApiRequest<GetCountriesResponse> {
     }
 
     @Override
-    public GetCountriesResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetCountriesResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetCountriesResponse.class);
     }
 

@@ -44,7 +44,7 @@ public class GetMyReviewsRequest extends GetApiRequest<GetMyReviewsResponse> {
     }
 
     @Override
-    public GetMyReviewsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetMyReviewsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetMyReviewsResponse.class);
     }
 

@@ -54,7 +54,7 @@ public class GetMyFreelancerBidsRequest extends GetApiRequest<GetMyFreelancerBid
     }
 
     @Override
-    public GetMyFreelancerBidsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetMyFreelancerBidsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetMyFreelancerBidsResponse.class);
     }
 

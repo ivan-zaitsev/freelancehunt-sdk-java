@@ -56,8 +56,7 @@ public class IncompleteProjectWorkspaceRequest extends PostApiRequest<Incomplete
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
@@ -70,7 +69,7 @@ public class IncompleteProjectWorkspaceRequest extends PostApiRequest<Incomplete
     }
 
     @Override
-    public IncompleteProjectWorkspaceResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected IncompleteProjectWorkspaceResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, IncompleteProjectWorkspaceResponse.class);
     }
 

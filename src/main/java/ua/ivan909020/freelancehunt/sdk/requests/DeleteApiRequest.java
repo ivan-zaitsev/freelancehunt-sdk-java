@@ -3,13 +3,12 @@ package ua.ivan909020.freelancehunt.sdk.requests;
 import java.io.IOException;
 
 import ua.ivan909020.freelancehunt.sdk.objects.http.HttpRequest;
-import ua.ivan909020.freelancehunt.sdk.utils.StreamUtils;
 
 public abstract class DeleteApiRequest<T> extends ApiRequest<T> {
 
     @Override
     public boolean isWritable() {
-        return true;
+        return false;
     }
 
     @Override
@@ -19,7 +18,7 @@ public abstract class DeleteApiRequest<T> extends ApiRequest<T> {
 
     @Override
     public void writeRequest(HttpRequest request) throws IOException {
-        StreamUtils.transfer(getEntity().getContent(), request.getOutputStream());
+
     }
 
 }

@@ -3,62 +3,67 @@ package ua.ivan909020.freelancehunt.sdk.requests;
 import java.io.IOException;
 
 import ua.ivan909020.freelancehunt.sdk.ApiClient;
-import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
 import ua.ivan909020.freelancehunt.sdk.objects.http.HttpRequest;
 import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
-import ua.ivan909020.freelancehunt.sdk.services.requests.RequestBuilder;
 import ua.ivan909020.freelancehunt.sdk.services.requests.RequestSerializer;
 import ua.ivan909020.freelancehunt.sdk.services.responses.ResponseDeserializer;
+import ua.ivan909020.freelancehunt.sdk.utils.RequestUtils;
 
 public abstract class ApiRequest<T> {
 
     protected ApiClient apiClient;
 
-    protected RequestBuilder requestBuilder;
     protected RequestSerializer requestSerializer;
     protected ResponseDeserializer responseDeserializer;
 
-    protected RequestExecutionChain requestExecutor;
     protected HttpEntity httpEntity;
 
     protected ApiRequest() {
     }
 
-    public void itilialize(ApiClient apiClient) {
+    public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
-        this.requestBuilder = new RequestBuilder();
-        this.requestSerializer = new RequestSerializer(apiClient.getObjectMapperConfig().getObjectMapper());
-        this.responseDeserializer = new ResponseDeserializer(apiClient.getObjectMapperConfig().getObjectMapper());
-        this.requestExecutor = new RequestExecutionChain(apiClient.getHttpClientConfig());
+    }
+
+    public void setRequestSerializer(RequestSerializer requestSerializer) {
+        this.requestSerializer = requestSerializer;
+    }
+
+    public void setResponseDeserializer(ResponseDeserializer responseDeserializer) {
+        this.responseDeserializer = responseDeserializer;
     }
 
     public abstract boolean isWritable();
-    
+
     public abstract String getMethod();
 
     public abstract String getUrlPath();
 
     public abstract HttpEntity getEntity();
 
-    public abstract void writeRequest(HttpRequest request) throws IOException;
-
-    public abstract T deserializeResponse(HttpResponse response) throws IOException;
-
     public String getUrl() {
-        return apiClient.getApiConfig().getBaseUrl() + getUrlPath();
+        String baseUrl = apiClient.getApiConfig().getBaseUrl() + getUrlPath();
+        String urlPath = getUrlPath();
+        String urlParameters = RequestUtils.buildUrlParameters(getEntity().getUrlParameters());
+
+        return baseUrl + urlPath + urlParameters;
     }
 
-    public void validate() {
-        if (apiClient == null) {
-            throw new ApiValidationException("ApiClient must not be NULL");
-        }
+    protected abstract void writeRequest(HttpRequest request) throws IOException;
+
+    protected abstract T deserializeResponse(HttpResponse response) throws IOException;
+
+    protected void validate() {
+
     }
 
     public T execute() throws IOException {
         validate();
 
-        HttpResponse response = requestExecutor.execute(this);
+        RequestExecutionChain executionChain = new RequestExecutionChain(apiClient.getHttpClientConfig());
+
+        HttpResponse response = executionChain.execute(this);
         return deserializeResponse(response);
     }
 

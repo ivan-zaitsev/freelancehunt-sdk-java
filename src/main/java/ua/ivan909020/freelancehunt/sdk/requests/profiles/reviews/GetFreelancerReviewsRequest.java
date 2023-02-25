@@ -51,15 +51,14 @@ public class GetFreelancerReviewsRequest extends GetApiRequest<GetFreelancerRevi
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (freelancerId == null) {
             throw new ApiValidationException("FreelancerId parameter can't be empty");
         }
     }
 
     @Override
-    public GetFreelancerReviewsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetFreelancerReviewsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetFreelancerReviewsResponse.class);
     }
 

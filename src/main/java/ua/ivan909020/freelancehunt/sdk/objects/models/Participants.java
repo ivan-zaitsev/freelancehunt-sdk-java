@@ -1,10 +1,10 @@
 package ua.ivan909020.freelancehunt.sdk.objects.models;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import ua.ivan909020.freelancehunt.sdk.objects.entities.User;
-
-import java.util.Objects;
 
 public class Participants {
 

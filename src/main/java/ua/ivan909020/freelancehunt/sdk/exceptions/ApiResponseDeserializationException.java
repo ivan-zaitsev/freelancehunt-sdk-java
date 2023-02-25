@@ -2,6 +2,8 @@ package ua.ivan909020.freelancehunt.sdk.exceptions;
 
 public class ApiResponseDeserializationException extends ApiException {
 
+    private static final long serialVersionUID = 1L;
+
     private String content;
 
     public ApiResponseDeserializationException(String message) {

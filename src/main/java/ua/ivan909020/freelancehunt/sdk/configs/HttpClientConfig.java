@@ -8,7 +8,6 @@ import ua.ivan909020.freelancehunt.sdk.interceptors.ApiRequestInterceptior;
 public class HttpClientConfig {
 
     private int connectionTimeout;
-
     private int socketTimeout;
 
     private List<ApiRequestInterceptior> interceptors = new ArrayList<>();
@@ -36,8 +35,8 @@ public class HttpClientConfig {
         return interceptors;
     }
 
-    public void setInterceptors(List<ApiRequestInterceptior> interceptors) {
-        this.interceptors = interceptors;
+    public void addInterceptors(List<ApiRequestInterceptior> interceptors) {
+        this.interceptors.addAll(interceptors);
     }
 
 }

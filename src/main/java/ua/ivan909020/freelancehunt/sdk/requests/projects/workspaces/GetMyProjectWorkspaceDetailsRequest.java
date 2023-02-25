@@ -34,15 +34,14 @@ public class GetMyProjectWorkspaceDetailsRequest extends GetApiRequest<GetMyProj
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
     }
 
     @Override
-    public GetMyProjectWorkspaceDetailsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetMyProjectWorkspaceDetailsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetMyProjectWorkspaceDetailsResponse.class);
     }
 

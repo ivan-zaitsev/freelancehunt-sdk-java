@@ -34,15 +34,14 @@ public class DeleteThreadRequest extends DeleteApiRequest<DeleteThreadResponse> 
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (threadId == null) {
             throw new ApiValidationException("ThreadId parameter can't be empty");
         }
     }
 
     @Override
-    public DeleteThreadResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected DeleteThreadResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, DeleteThreadResponse.class);
     }
 

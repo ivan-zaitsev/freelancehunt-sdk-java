@@ -1,11 +1,11 @@
 package ua.ivan909020.freelancehunt.sdk.responses.skills;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import ua.ivan909020.freelancehunt.sdk.objects.models.Skill;
 import ua.ivan909020.freelancehunt.sdk.responses.ApiResponse;
-
-import java.util.List;
 
 public class GetSkillsResponse extends ApiResponse {
 

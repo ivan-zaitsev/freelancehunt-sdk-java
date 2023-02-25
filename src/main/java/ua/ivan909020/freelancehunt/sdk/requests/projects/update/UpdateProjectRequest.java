@@ -1,6 +1,6 @@
 package ua.ivan909020.freelancehunt.sdk.requests.projects.update;
 
-import static ua.ivan909020.freelancehunt.sdk.configs.ObjectMapperConfig.DATE_TIME_PATTERN;
+import static ua.ivan909020.freelancehunt.sdk.utils.DateUtils.DATE_TIME_PATTERN;
 
 import java.io.IOException;
 import java.time.ZonedDateTime;
@@ -99,8 +99,7 @@ public class UpdateProjectRequest extends PatchApiRequest<UpdateProjectResponse>
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
@@ -122,7 +121,7 @@ public class UpdateProjectRequest extends PatchApiRequest<UpdateProjectResponse>
     }
 
     @Override
-    public UpdateProjectResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected UpdateProjectResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, UpdateProjectResponse.class);
     }
 

@@ -61,15 +61,14 @@ public class GetProjectBidsRequest extends GetApiRequest<GetProjectBidsResponse>
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
     }
 
     @Override
-    public GetProjectBidsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetProjectBidsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetProjectBidsResponse.class);
     }
 

@@ -53,7 +53,7 @@ public class GetMyContestWorkspacesRequest extends GetApiRequest<GetMyContestWor
     }
 
     @Override
-    public GetMyContestWorkspacesResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetMyContestWorkspacesResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetMyContestWorkspacesResponse.class);
     }
 

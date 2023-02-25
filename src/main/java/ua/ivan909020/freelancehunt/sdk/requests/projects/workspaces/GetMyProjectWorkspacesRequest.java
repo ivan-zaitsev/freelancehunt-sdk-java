@@ -53,7 +53,7 @@ public class GetMyProjectWorkspacesRequest extends GetApiRequest<GetMyProjectWor
     }
 
     @Override
-    public GetMyProjectWorkspacesResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetMyProjectWorkspacesResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetMyProjectWorkspacesResponse.class);
     }
 

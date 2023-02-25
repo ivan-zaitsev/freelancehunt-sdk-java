@@ -45,8 +45,7 @@ public class CompleteMyContestWorkspaceRequest extends PostApiRequest<CompleteMy
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
@@ -56,7 +55,7 @@ public class CompleteMyContestWorkspaceRequest extends PostApiRequest<CompleteMy
     }
 
     @Override
-    public CompleteMyContestWorkspaceResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected CompleteMyContestWorkspaceResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, CompleteMyContestWorkspaceResponse.class);
     }
 

@@ -26,7 +26,7 @@ public class ReadMyFeedRequest extends PostApiRequest<ReadMyFeedResponse> {
     }
 
     @Override
-    public ReadMyFeedResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected ReadMyFeedResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, ReadMyFeedResponse.class);
     }
 

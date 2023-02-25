@@ -49,8 +49,7 @@ public class CreateSupportThreadRequest extends PostApiRequest<CreateSupportThre
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (subject == null) {
             throw new ApiValidationException("Subject parameter can't be empty");
         }
@@ -60,7 +59,7 @@ public class CreateSupportThreadRequest extends PostApiRequest<CreateSupportThre
     }
 
     @Override
-    public CreateSupportThreadResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected CreateSupportThreadResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, CreateSupportThreadResponse.class);
     }
 

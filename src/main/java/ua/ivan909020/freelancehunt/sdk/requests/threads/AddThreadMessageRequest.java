@@ -45,8 +45,7 @@ public class AddThreadMessageRequest extends PostApiRequest<AddThreadMessageResp
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (threadId == null) {
             throw new ApiValidationException("ThreadId parameter can't be empty");
         }
@@ -56,7 +55,7 @@ public class AddThreadMessageRequest extends PostApiRequest<AddThreadMessageResp
     }
 
     @Override
-    public AddThreadMessageResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected AddThreadMessageResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, AddThreadMessageResponse.class);
     }
 

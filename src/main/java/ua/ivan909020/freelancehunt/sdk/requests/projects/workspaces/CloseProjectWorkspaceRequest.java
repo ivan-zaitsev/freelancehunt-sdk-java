@@ -45,8 +45,7 @@ public class CloseProjectWorkspaceRequest extends PostApiRequest<CloseProjectWor
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
@@ -56,7 +55,7 @@ public class CloseProjectWorkspaceRequest extends PostApiRequest<CloseProjectWor
     }
 
     @Override
-    public CloseProjectWorkspaceResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected CloseProjectWorkspaceResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, CloseProjectWorkspaceResponse.class);
     }
 

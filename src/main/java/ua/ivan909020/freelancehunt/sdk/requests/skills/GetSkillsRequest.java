@@ -26,7 +26,7 @@ public class GetSkillsRequest extends GetApiRequest<GetSkillsResponse> {
     }
 
     @Override
-    public GetSkillsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetSkillsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetSkillsResponse.class);
     }
 

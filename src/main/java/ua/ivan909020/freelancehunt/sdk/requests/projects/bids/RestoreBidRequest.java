@@ -40,8 +40,7 @@ public class RestoreBidRequest extends PostApiRequest<RestoreBidResponse> {
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
@@ -51,7 +50,7 @@ public class RestoreBidRequest extends PostApiRequest<RestoreBidResponse> {
     }
 
     @Override
-    public RestoreBidResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected RestoreBidResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, RestoreBidResponse.class);
     }
 

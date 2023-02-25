@@ -34,15 +34,14 @@ public class RejectProjectWorkspaceConditionsRequest extends PostApiRequest<Reje
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
     }
 
     @Override
-    public RejectProjectWorkspaceConditionsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected RejectProjectWorkspaceConditionsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, RejectProjectWorkspaceConditionsResponse.class);
     }
 

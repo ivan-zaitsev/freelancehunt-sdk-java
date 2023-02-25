@@ -45,8 +45,7 @@ public class ExtendProjectWorkspaceExecutionRequest extends PostApiRequest<Exten
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
@@ -56,7 +55,7 @@ public class ExtendProjectWorkspaceExecutionRequest extends PostApiRequest<Exten
     }
 
     @Override
-    public ExtendProjectWorkspaceExecutionResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected ExtendProjectWorkspaceExecutionResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, ExtendProjectWorkspaceExecutionResponse.class);
     }
 

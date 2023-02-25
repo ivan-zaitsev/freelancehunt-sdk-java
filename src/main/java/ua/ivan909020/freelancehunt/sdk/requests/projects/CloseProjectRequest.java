@@ -34,15 +34,14 @@ public class CloseProjectRequest extends PostApiRequest<CloseProjectResponse> {
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
     }
 
     @Override
-    public CloseProjectResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected CloseProjectResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, CloseProjectResponse.class);
     }
 

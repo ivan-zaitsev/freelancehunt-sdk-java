@@ -72,8 +72,7 @@ public class ProposeProjectWorkspaceConditionsRequest
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
@@ -92,7 +91,7 @@ public class ProposeProjectWorkspaceConditionsRequest
     }
 
     @Override
-    public ProposeProjectWorkspaceConditionsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected ProposeProjectWorkspaceConditionsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, ProposeProjectWorkspaceConditionsResponse.class);
     }
 

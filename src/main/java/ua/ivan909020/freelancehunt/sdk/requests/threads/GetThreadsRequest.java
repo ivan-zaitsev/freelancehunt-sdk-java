@@ -44,7 +44,7 @@ public class GetThreadsRequest extends GetApiRequest<GetThreadsResponse> {
     }
 
     @Override
-    public GetThreadsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetThreadsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetThreadsResponse.class);
     }
 

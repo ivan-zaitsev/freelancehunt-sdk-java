@@ -51,15 +51,14 @@ public class GetEmployerReviewsRequest extends GetApiRequest<GetEmployerReviewsR
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (employerId == null) {
             throw new ApiValidationException("EmployerId parameter can't be empty");
         }
     }
 
     @Override
-    public GetEmployerReviewsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetEmployerReviewsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetEmployerReviewsResponse.class);
     }
 

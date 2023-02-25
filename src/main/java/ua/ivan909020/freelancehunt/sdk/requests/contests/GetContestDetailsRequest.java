@@ -34,15 +34,14 @@ public class GetContestDetailsRequest extends GetApiRequest<GetContestDetailsRes
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (contestId == null) {
             throw new ApiValidationException("ContestId parameter can't be empty");
         }
     }
 
     @Override
-    public GetContestDetailsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetContestDetailsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetContestDetailsResponse.class);
     }
 

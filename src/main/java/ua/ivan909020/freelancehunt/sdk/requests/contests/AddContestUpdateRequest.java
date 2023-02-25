@@ -45,8 +45,7 @@ public class AddContestUpdateRequest extends PostApiRequest<AddContestUpdateResp
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (contestId == null) {
             throw new ApiValidationException("ContestId parameter can't be empty");
         }
@@ -56,7 +55,7 @@ public class AddContestUpdateRequest extends PostApiRequest<AddContestUpdateResp
     }
 
     @Override
-    public AddContestUpdateResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected AddContestUpdateResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, AddContestUpdateResponse.class);
     }
 

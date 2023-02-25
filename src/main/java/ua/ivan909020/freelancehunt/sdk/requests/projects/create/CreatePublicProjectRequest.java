@@ -1,6 +1,6 @@
 package ua.ivan909020.freelancehunt.sdk.requests.projects.create;
 
-import static ua.ivan909020.freelancehunt.sdk.configs.ObjectMapperConfig.DATE_TIME_PATTERN;
+import static ua.ivan909020.freelancehunt.sdk.utils.DateUtils.DATE_TIME_PATTERN;
 
 import java.io.IOException;
 import java.time.ZonedDateTime;
@@ -102,8 +102,7 @@ public class CreatePublicProjectRequest extends PostApiRequest<CreatePublicProje
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (name == null) {
             throw new ApiValidationException("Name parameter can't be empty");
         }
@@ -122,7 +121,7 @@ public class CreatePublicProjectRequest extends PostApiRequest<CreatePublicProje
     }
 
     @Override
-    public CreatePublicProjectResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected CreatePublicProjectResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, CreatePublicProjectResponse.class);
     }
 

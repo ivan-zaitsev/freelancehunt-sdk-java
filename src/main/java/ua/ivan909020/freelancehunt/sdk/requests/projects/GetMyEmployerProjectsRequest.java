@@ -64,7 +64,7 @@ public class GetMyEmployerProjectsRequest extends GetApiRequest<GetMyEmployerPro
     }
 
     @Override
-    public GetMyEmployerProjectsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetMyEmployerProjectsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetMyEmployerProjectsResponse.class);
     }
 

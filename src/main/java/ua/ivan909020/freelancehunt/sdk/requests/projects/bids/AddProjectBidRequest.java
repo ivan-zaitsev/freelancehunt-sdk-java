@@ -78,8 +78,7 @@ public class AddProjectBidRequest extends PostApiRequest<AddProjectBidResponse> 
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
@@ -101,7 +100,7 @@ public class AddProjectBidRequest extends PostApiRequest<AddProjectBidResponse> 
     }
 
     @Override
-    public AddProjectBidResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected AddProjectBidResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, AddProjectBidResponse.class);
     }
 

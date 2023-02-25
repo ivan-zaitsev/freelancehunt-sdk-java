@@ -4,6 +4,8 @@ import ua.ivan909020.freelancehunt.sdk.objects.models.Error;
 
 public class ApiRequestException extends ApiException {
 
+    private static final long serialVersionUID = 1L;
+
     private Error error;
 
     public ApiRequestException(String message) {

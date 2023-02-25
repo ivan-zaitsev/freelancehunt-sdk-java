@@ -82,7 +82,7 @@ public class GetFreelancersRequest extends GetApiRequest<GetFreelancersResponse>
     }
 
     @Override
-    public GetFreelancersResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetFreelancersResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetFreelancersResponse.class);
     }
 

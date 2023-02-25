@@ -4,20 +4,26 @@ import java.io.IOException;
 
 import ua.ivan909020.freelancehunt.sdk.configs.ApiConfig;
 import ua.ivan909020.freelancehunt.sdk.configs.HttpClientConfig;
-import ua.ivan909020.freelancehunt.sdk.configs.ObjectMapperConfig;
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import ua.ivan909020.freelancehunt.sdk.requests.ApiRequest;
+import ua.ivan909020.freelancehunt.sdk.services.requests.RequestSerializer;
+import ua.ivan909020.freelancehunt.sdk.services.responses.ResponseDeserializer;
 
 public class ApiClient {
 
     private final ApiConfig apiConfig;
     private final HttpClientConfig httpClientConfig;
-    private final ObjectMapperConfig objectMapperConfig;
 
-    public ApiClient(ApiConfig apiConfig, HttpClientConfig httpClientConfig) {
+    private RequestSerializer requestSerializer;
+    private ResponseDeserializer responseDeserializer;
+
+    ApiClient(ApiConfig apiConfig, HttpClientConfig httpClientConfig) {
         this.apiConfig = apiConfig;
         this.httpClientConfig = httpClientConfig;
-        this.objectMapperConfig = new ObjectMapperConfig();
+    }
+
+    public static ApiClientBuilder builder() {
+        return new ApiClientBuilder();
     }
 
     public ApiConfig getApiConfig() {
@@ -28,12 +34,18 @@ public class ApiClient {
         return httpClientConfig;
     }
 
-    public ObjectMapperConfig getObjectMapperConfig() {
-        return objectMapperConfig;
+    public void setRequestSerializer(RequestSerializer requestSerializer) {
+        this.requestSerializer = requestSerializer;
+    }
+
+    public void setResponseDeserializer(ResponseDeserializer responseDeserializer) {
+        this.responseDeserializer = responseDeserializer;
     }
 
     public <T> T sendRequest(ApiRequest<T> request) {
-        request.itilialize(this);
+        request.setApiClient(this);
+        request.setRequestSerializer(requestSerializer);
+        request.setResponseDeserializer(responseDeserializer);
 
         try {
             return request.execute();

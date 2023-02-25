@@ -26,7 +26,7 @@ public class GetMyProfileRequest extends GetApiRequest<GetMyProfileResponse> {
     }
 
     @Override
-    public GetMyProfileResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetMyProfileResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetMyProfileResponse.class);
     }
 

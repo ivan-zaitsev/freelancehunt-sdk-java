@@ -40,8 +40,7 @@ public class RevokeBidRequest extends PostApiRequest<RevokeBidResponse> {
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (projectId == null) {
             throw new ApiValidationException("ProjectId parameter can't be empty");
         }
@@ -51,7 +50,7 @@ public class RevokeBidRequest extends PostApiRequest<RevokeBidResponse> {
     }
 
     @Override
-    public RevokeBidResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected RevokeBidResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, RevokeBidResponse.class);
     }
 

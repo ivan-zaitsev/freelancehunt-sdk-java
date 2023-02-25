@@ -1,12 +1,12 @@
 package ua.ivan909020.freelancehunt.sdk.objects.entities;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import ua.ivan909020.freelancehunt.sdk.objects.models.Budget;
 import ua.ivan909020.freelancehunt.sdk.objects.models.EntityType;
 import ua.ivan909020.freelancehunt.sdk.objects.models.Status;
-
-import java.util.Objects;
 
 public class Contest {
 

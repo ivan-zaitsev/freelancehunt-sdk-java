@@ -34,15 +34,14 @@ public class GetThreadMessagesRequest extends GetApiRequest<GetThreadMessagesRes
     }
 
     @Override
-    public void validate() {
-        super.validate();
+    protected void validate() {
         if (threadId == null) {
             throw new ApiValidationException("ThreadId parameter can't be empty");
         }
     }
 
     @Override
-    public GetThreadMessagesResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetThreadMessagesResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetThreadMessagesResponse.class);
     }
 

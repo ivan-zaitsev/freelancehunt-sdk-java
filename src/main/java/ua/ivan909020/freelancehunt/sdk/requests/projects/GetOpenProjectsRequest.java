@@ -82,7 +82,7 @@ public class GetOpenProjectsRequest extends GetApiRequest<GetOpenProjectsRespons
     }
 
     @Override
-    public GetOpenProjectsResponse deserializeResponse(HttpResponse response) throws IOException {
+    protected GetOpenProjectsResponse deserializeResponse(HttpResponse response) throws IOException {
         return responseDeserializer.deserialize(response, GetOpenProjectsResponse.class);
     }
 
