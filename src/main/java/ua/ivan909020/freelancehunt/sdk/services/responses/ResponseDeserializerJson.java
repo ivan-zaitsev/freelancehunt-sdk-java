@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiRequestException;
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiResponseDeserializationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.responses.ApiResponse;
 import ua.ivan909020.freelancehunt.sdk.utils.StreamUtils;
 

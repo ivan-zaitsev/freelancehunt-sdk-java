@@ -2,7 +2,7 @@ package ua.ivan909020.freelancehunt.sdk.requests;
 
 import java.io.IOException;
 
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpRequest;
+import ua.ivan909020.freelancehunt.sdk.objects.request.HttpRequest;
 
 public abstract class DeleteApiRequest<T> extends ApiRequest<T> {
 

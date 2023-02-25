@@ -1,4 +1,4 @@
-package ua.ivan909020.freelancehunt.sdk.objects.http;
+package ua.ivan909020.freelancehunt.sdk.objects.request;
 
 import java.io.IOException;
 import java.io.OutputStream;

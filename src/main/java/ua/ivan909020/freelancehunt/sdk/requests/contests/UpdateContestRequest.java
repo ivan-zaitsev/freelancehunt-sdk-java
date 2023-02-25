@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.objects.models.Budget;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PatchApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.contests.UpdateContestResponse;
 

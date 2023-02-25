@@ -3,9 +3,9 @@ package ua.ivan909020.freelancehunt.sdk.requests;
 import java.io.IOException;
 
 import ua.ivan909020.freelancehunt.sdk.ApiClient;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpRequest;
-import ua.ivan909020.freelancehunt.sdk.objects.http.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.objects.request.HttpRequest;
+import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
+import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.services.requests.RequestSerializer;
 import ua.ivan909020.freelancehunt.sdk.services.responses.ResponseDeserializer;
 import ua.ivan909020.freelancehunt.sdk.utils.RequestUtils;
@@ -34,6 +34,14 @@ public abstract class ApiRequest<T> {
         this.responseDeserializer = responseDeserializer;
     }
 
+    public String getUrl() {
+        String baseUrl = apiClient.getApiConfig().getBaseUrl() + getUrlPath();
+        String urlPath = getUrlPath();
+        String urlParameters = RequestUtils.buildUrlParameters(httpEntity.getUrlParameters());
+
+        return baseUrl + urlPath + urlParameters;
+    }
+
     public abstract boolean isWritable();
 
     public abstract String getMethod();
@@ -41,14 +49,6 @@ public abstract class ApiRequest<T> {
     public abstract String getUrlPath();
 
     public abstract HttpEntity getEntity();
-
-    public String getUrl() {
-        String baseUrl = apiClient.getApiConfig().getBaseUrl() + getUrlPath();
-        String urlPath = getUrlPath();
-        String urlParameters = RequestUtils.buildUrlParameters(getEntity().getUrlParameters());
-
-        return baseUrl + urlPath + urlParameters;
-    }
 
     protected abstract void writeRequest(HttpRequest request) throws IOException;
 
@@ -61,10 +61,12 @@ public abstract class ApiRequest<T> {
     public T execute() throws IOException {
         validate();
 
+        RequestContext context = new RequestContext(this);
         RequestExecutionChain executionChain = new RequestExecutionChain(apiClient.getHttpClientConfig());
 
-        HttpResponse response = executionChain.execute(this);
-        return deserializeResponse(response);
+        try (HttpResponse response = executionChain.execute(context)) {
+            return deserializeResponse(response);
+        }
     }
 
 }
