@@ -1,13 +1,11 @@
 package ua.ivan909020.freelancehunt.sdk.requests.projects;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.GetOpenProjectsResponse;
 
@@ -79,11 +77,6 @@ public class GetOpenProjectsRequest extends GetApiRequest<GetOpenProjectsRespons
             parameters.put("filter[only_for_plus]", onlyForPlus);
         }
         return parameters;
-    }
-
-    @Override
-    protected GetOpenProjectsResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, GetOpenProjectsResponse.class);
     }
 
 }

@@ -1,11 +1,9 @@
 package ua.ivan909020.freelancehunt.sdk.requests.contests.workspaces;
 
-import java.io.IOException;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.contests.workspaces.CompleteMyContestWorkspaceResponse;
 
@@ -52,11 +50,6 @@ public class CompleteMyContestWorkspaceRequest extends PostApiRequest<CompleteMy
         if (comment == null) {
             throw new ApiValidationException("Comment parameter can't be empty");
         }
-    }
-
-    @Override
-    protected CompleteMyContestWorkspaceResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, CompleteMyContestWorkspaceResponse.class);
     }
 
 }

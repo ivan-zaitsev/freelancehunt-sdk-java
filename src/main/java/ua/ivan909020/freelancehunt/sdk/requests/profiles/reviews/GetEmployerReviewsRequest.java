@@ -1,12 +1,10 @@
 package ua.ivan909020.freelancehunt.sdk.requests.profiles.reviews;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.profiles.reviews.GetEmployerReviewsResponse;
 
@@ -55,11 +53,6 @@ public class GetEmployerReviewsRequest extends GetApiRequest<GetEmployerReviewsR
         if (employerId == null) {
             throw new ApiValidationException("EmployerId parameter can't be empty");
         }
-    }
-
-    @Override
-    protected GetEmployerReviewsResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, GetEmployerReviewsResponse.class);
     }
 
 }

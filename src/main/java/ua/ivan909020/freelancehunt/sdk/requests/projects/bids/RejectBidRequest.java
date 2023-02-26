@@ -1,10 +1,7 @@
 package ua.ivan909020.freelancehunt.sdk.requests.projects.bids;
 
-import java.io.IOException;
-
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.bids.RejectBidResponse;
 
@@ -47,11 +44,6 @@ public class RejectBidRequest extends PostApiRequest<RejectBidResponse> {
         if (bidId == null) {
             throw new ApiValidationException("BidId parameter can't be empty");
         }
-    }
-
-    @Override
-    protected RejectBidResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, RejectBidResponse.class);
     }
 
 }

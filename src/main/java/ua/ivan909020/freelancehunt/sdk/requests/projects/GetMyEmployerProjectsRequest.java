@@ -1,13 +1,11 @@
 package ua.ivan909020.freelancehunt.sdk.requests.projects;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.GetMyEmployerProjectsResponse;
 
@@ -61,11 +59,6 @@ public class GetMyEmployerProjectsRequest extends GetApiRequest<GetMyEmployerPro
             parameters.put("filter[status_id]", statusId);
         }
         return parameters;
-    }
-
-    @Override
-    protected GetMyEmployerProjectsResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, GetMyEmployerProjectsResponse.class);
     }
 
 }

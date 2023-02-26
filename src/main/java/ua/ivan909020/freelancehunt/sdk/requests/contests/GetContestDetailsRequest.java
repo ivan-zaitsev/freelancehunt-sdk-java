@@ -1,10 +1,7 @@
 package ua.ivan909020.freelancehunt.sdk.requests.contests;
 
-import java.io.IOException;
-
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.contests.GetContestDetailsResponse;
 
@@ -38,11 +35,6 @@ public class GetContestDetailsRequest extends GetApiRequest<GetContestDetailsRes
         if (contestId == null) {
             throw new ApiValidationException("ContestId parameter can't be empty");
         }
-    }
-
-    @Override
-    protected GetContestDetailsResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, GetContestDetailsResponse.class);
     }
 
 }

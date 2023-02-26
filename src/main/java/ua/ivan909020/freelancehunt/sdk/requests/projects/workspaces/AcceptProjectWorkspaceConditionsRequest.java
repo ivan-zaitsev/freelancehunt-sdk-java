@@ -1,10 +1,7 @@
 package ua.ivan909020.freelancehunt.sdk.requests.projects.workspaces;
 
-import java.io.IOException;
-
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.workspaces.AcceptProjectWorkspaceConditionsResponse;
 
@@ -38,11 +35,6 @@ public class AcceptProjectWorkspaceConditionsRequest extends PostApiRequest<Acce
         if (workspaceId == null) {
             throw new ApiValidationException("WorkspaceId parameter can't be empty");
         }
-    }
-
-    @Override
-    protected AcceptProjectWorkspaceConditionsResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, AcceptProjectWorkspaceConditionsResponse.class);
     }
 
 }

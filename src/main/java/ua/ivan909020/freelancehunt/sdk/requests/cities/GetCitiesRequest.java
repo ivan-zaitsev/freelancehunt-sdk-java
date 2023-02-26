@@ -1,10 +1,7 @@
 package ua.ivan909020.freelancehunt.sdk.requests.cities;
 
-import java.io.IOException;
-
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.GetApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.cities.GetCitiesResponse;
 
@@ -38,11 +35,6 @@ public class GetCitiesRequest extends GetApiRequest<GetCitiesResponse> {
         if (countryId == null) {
             throw new ApiValidationException("CountryId parameter can't be empty");
         }
-    }
-
-    @Override
-    protected GetCitiesResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, GetCitiesResponse.class);
     }
 
 }

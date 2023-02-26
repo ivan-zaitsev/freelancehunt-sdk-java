@@ -1,6 +1,5 @@
 package ua.ivan909020.freelancehunt.sdk.requests.contests;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,7 +7,6 @@ import java.util.Map;
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.models.Budget;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PatchApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.contests.UpdateContestResponse;
 
@@ -105,11 +103,6 @@ public class UpdateContestRequest extends PatchApiRequest<UpdateContestResponse>
         if (descriptionHtml == null) {
             throw new ApiValidationException("DescriptionHtml parameter can't be empty");
         }
-    }
-
-    @Override
-    protected UpdateContestResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, UpdateContestResponse.class);
     }
 
 }
