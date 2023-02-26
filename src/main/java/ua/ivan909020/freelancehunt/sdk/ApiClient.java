@@ -6,6 +6,7 @@ import ua.ivan909020.freelancehunt.sdk.configs.ApiConfig;
 import ua.ivan909020.freelancehunt.sdk.configs.HttpClientConfig;
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiException;
 import ua.ivan909020.freelancehunt.sdk.requests.ApiRequest;
+import ua.ivan909020.freelancehunt.sdk.responses.ApiResponse;
 import ua.ivan909020.freelancehunt.sdk.services.requests.RequestSerializer;
 import ua.ivan909020.freelancehunt.sdk.services.responses.ResponseDeserializer;
 
@@ -42,7 +43,7 @@ public class ApiClient {
         this.responseDeserializer = responseDeserializer;
     }
 
-    public <T> T sendRequest(ApiRequest<T> request) {
+    public <T extends ApiResponse> T sendRequest(ApiRequest<T> request) {
         request.setApiClient(this);
         request.setRequestSerializer(requestSerializer);
         request.setResponseDeserializer(responseDeserializer);

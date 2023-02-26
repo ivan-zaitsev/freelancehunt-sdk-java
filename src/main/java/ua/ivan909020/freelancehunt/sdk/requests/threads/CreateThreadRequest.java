@@ -1,12 +1,10 @@
 package ua.ivan909020.freelancehunt.sdk.requests.threads;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.threads.CreateThreadResponse;
 
@@ -66,11 +64,6 @@ public class CreateThreadRequest extends PostApiRequest<CreateThreadResponse> {
         if (toProfileId == null) {
             throw new ApiValidationException("ToProfileId parameter can't be empty");
         }
-    }
-
-    @Override
-    protected CreateThreadResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, CreateThreadResponse.class);
     }
 
 }

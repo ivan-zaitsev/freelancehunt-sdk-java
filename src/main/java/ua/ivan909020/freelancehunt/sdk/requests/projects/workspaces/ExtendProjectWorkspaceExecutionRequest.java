@@ -1,11 +1,9 @@
 package ua.ivan909020.freelancehunt.sdk.requests.projects.workspaces;
 
-import java.io.IOException;
 import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.workspaces.ExtendProjectWorkspaceExecutionResponse;
 
@@ -52,11 +50,6 @@ public class ExtendProjectWorkspaceExecutionRequest extends PostApiRequest<Exten
         if (days == null) {
             throw new ApiValidationException("Days parameter can't be empty");
         }
-    }
-
-    @Override
-    protected ExtendProjectWorkspaceExecutionResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, ExtendProjectWorkspaceExecutionResponse.class);
     }
 
 }

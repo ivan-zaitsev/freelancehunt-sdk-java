@@ -2,7 +2,6 @@ package ua.ivan909020.freelancehunt.sdk.requests.projects.update;
 
 import static ua.ivan909020.freelancehunt.sdk.utils.DateUtils.DATE_TIME_PATTERN;
 
-import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -13,7 +12,6 @@ import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.models.Budget;
 import ua.ivan909020.freelancehunt.sdk.objects.models.SafeType;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PatchApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.projects.update.UpdateProjectResponse;
 
@@ -118,11 +116,6 @@ public class UpdateProjectRequest extends PatchApiRequest<UpdateProjectResponse>
         if (expiredAt == null) {
             throw new ApiValidationException("ExpiredAt parameter can't be empty");
         }
-    }
-
-    @Override
-    protected UpdateProjectResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, UpdateProjectResponse.class);
     }
 
 }

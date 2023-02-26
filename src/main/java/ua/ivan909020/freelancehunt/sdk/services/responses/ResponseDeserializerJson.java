@@ -5,7 +5,6 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ua.ivan909020.freelancehunt.sdk.exceptions.ApiRequestException;
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiResponseDeserializationException;
 import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.responses.ApiResponse;
@@ -31,13 +30,7 @@ public class ResponseDeserializerJson implements ResponseDeserializer {
     @Override
     public <T extends ApiResponse> T deserialize(HttpResponse response, Class<T> responseClass) throws IOException {
         String content = readContent(response);
-
-        T result = deserialize(content, responseClass);
-
-        if (result.getError() != null) {
-            throw new ApiRequestException("Api response error", result.getError());
-        }
-        return result;
+        return deserialize(content, responseClass);
     }
 
     private String readContent(HttpResponse response) throws IOException {

@@ -14,7 +14,6 @@ import java.util.List;
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.HttpRequest;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
-import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.threads.UploadFileToThreadResponse;
 import ua.ivan909020.freelancehunt.sdk.utils.StreamUtils;
@@ -102,11 +101,6 @@ public class UploadFileToThreadRequest extends PostApiRequest<UploadFileToThread
         if (attachments == null || attachments.isEmpty()) {
             throw new ApiValidationException("Attachments parameter can't be empty");
         }
-    }
-
-    @Override
-    protected UploadFileToThreadResponse deserializeResponse(HttpResponse response) throws IOException {
-        return responseDeserializer.deserialize(response, UploadFileToThreadResponse.class);
     }
 
 }

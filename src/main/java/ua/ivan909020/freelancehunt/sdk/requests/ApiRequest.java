@@ -1,16 +1,19 @@
 package ua.ivan909020.freelancehunt.sdk.requests;
 
 import java.io.IOException;
+import java.lang.reflect.ParameterizedType;
 
 import ua.ivan909020.freelancehunt.sdk.ApiClient;
+import ua.ivan909020.freelancehunt.sdk.exceptions.ApiRequestException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.HttpRequest;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
 import ua.ivan909020.freelancehunt.sdk.objects.response.HttpResponse;
+import ua.ivan909020.freelancehunt.sdk.responses.ApiResponse;
 import ua.ivan909020.freelancehunt.sdk.services.requests.RequestSerializer;
 import ua.ivan909020.freelancehunt.sdk.services.responses.ResponseDeserializer;
 import ua.ivan909020.freelancehunt.sdk.utils.RequestUtils;
 
-public abstract class ApiRequest<T> {
+public abstract class ApiRequest<T extends ApiResponse> {
 
     protected ApiClient apiClient;
 
@@ -35,7 +38,7 @@ public abstract class ApiRequest<T> {
     }
 
     public String getUrl() {
-        String baseUrl = apiClient.getApiConfig().getBaseUrl() + getUrlPath();
+        String baseUrl = apiClient.getApiConfig().getBaseUrl();
         String urlPath = getUrlPath();
         String urlParameters = RequestUtils.buildUrlParameters(httpEntity.getUrlParameters());
 
@@ -52,10 +55,23 @@ public abstract class ApiRequest<T> {
 
     protected abstract void writeRequest(HttpRequest request) throws IOException;
 
-    protected abstract T deserializeResponse(HttpResponse response) throws IOException;
+    protected T deserializeResponse(HttpResponse response) throws IOException {
+        T result = responseDeserializer.deserialize(response, getResponseClass());
+
+        if (result.getError() != null) {
+            throw new ApiRequestException("Api response error", result.getError());
+        }
+        return result;
+    }
 
     protected void validate() {
 
+    }
+
+    @SuppressWarnings("unchecked")
+    protected Class<T> getResponseClass() {
+        ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
+        return (Class<T>) type.getActualTypeArguments()[0];
     }
 
     public T execute() throws IOException {

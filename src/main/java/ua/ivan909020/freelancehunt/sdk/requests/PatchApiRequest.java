@@ -3,9 +3,10 @@ package ua.ivan909020.freelancehunt.sdk.requests;
 import java.io.IOException;
 
 import ua.ivan909020.freelancehunt.sdk.objects.request.HttpRequest;
+import ua.ivan909020.freelancehunt.sdk.responses.ApiResponse;
 import ua.ivan909020.freelancehunt.sdk.utils.StreamUtils;
 
-public abstract class PatchApiRequest<T> extends ApiRequest<T> {
+public abstract class PatchApiRequest<T extends ApiResponse> extends ApiRequest<T> {
 
     @Override
     public boolean isWritable() {
