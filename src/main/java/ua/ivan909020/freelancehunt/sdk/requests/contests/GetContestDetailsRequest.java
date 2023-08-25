@@ -9,9 +9,6 @@ public class GetContestDetailsRequest extends GetApiRequest<GetContestDetailsRes
 
     private Long contestId;
 
-    public GetContestDetailsRequest() {
-    }
-
     public GetContestDetailsRequest setContestId(Long contestId) {
         this.contestId = contestId;
         return this;

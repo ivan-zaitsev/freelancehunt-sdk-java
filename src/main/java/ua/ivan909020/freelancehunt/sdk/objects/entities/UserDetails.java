@@ -30,9 +30,6 @@ public class UserDetails {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public UserDetails() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -141,9 +138,6 @@ public class UserDetails {
         @JsonProperty("skills")
         private List<Skill> skills;
 
-        public Attributes() {
-        }
-
         public String getLogin() {
             return login;
         }
@@ -200,11 +194,11 @@ public class UserDetails {
             return plusEndsAt;
         }
 
-        public Boolean getPlusActive() {
+        public Boolean getIsPlusActive() {
             return isPlusActive;
         }
 
-        public Boolean getOnline() {
+        public Boolean getIsOnline() {
             return isOnline;
         }
 

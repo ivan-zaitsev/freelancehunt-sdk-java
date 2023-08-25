@@ -12,9 +12,6 @@ public class Budget {
     @JsonProperty("currency")
     private Currency currency;
 
-    public Budget() {
-    }
-
     public Integer getAmount() {
         return amount;
     }

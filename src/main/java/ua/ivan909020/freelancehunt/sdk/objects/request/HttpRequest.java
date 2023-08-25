@@ -12,10 +12,6 @@ public class HttpRequest {
         this.connection = connection;
     }
 
-    public void addHeader(String key, String value) {
-        connection.setRequestProperty(key, value);
-    }
-
     public OutputStream getOutputStream() throws IOException {
         return connection.getOutputStream();
     }

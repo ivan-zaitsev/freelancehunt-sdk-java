@@ -25,9 +25,6 @@ public class Contest {
     @JsonProperty("budget")
     private Budget budget;
 
-    public Contest() {
-    }
-
     public Long getId() {
         return id;
     }

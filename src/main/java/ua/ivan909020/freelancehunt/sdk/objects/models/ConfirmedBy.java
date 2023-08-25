@@ -12,9 +12,6 @@ public class ConfirmedBy {
     @JsonProperty("freelancer")
     private Boolean freelancer;
 
-    public ConfirmedBy() {
-    }
-
     public Boolean getEmployer() {
         return employer;
     }

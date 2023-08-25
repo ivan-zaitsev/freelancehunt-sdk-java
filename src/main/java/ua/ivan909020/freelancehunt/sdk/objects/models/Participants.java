@@ -14,9 +14,6 @@ public class Participants {
     @JsonProperty("to")
     private User to;
 
-    public Participants() {
-    }
-
     public User getFrom() {
         return from;
     }

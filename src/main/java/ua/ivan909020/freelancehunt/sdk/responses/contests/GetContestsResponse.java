@@ -12,9 +12,6 @@ public class GetContestsResponse extends ApiResponse {
     @JsonProperty("data")
     private List<ContestDetails> contests;
 
-    public GetContestsResponse() {
-    }
-
     public List<ContestDetails> getContests() {
         return contests;
     }

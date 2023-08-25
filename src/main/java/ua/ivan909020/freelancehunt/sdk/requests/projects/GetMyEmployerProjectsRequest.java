@@ -15,9 +15,6 @@ public class GetMyEmployerProjectsRequest extends GetApiRequest<GetMyEmployerPro
     private List<Integer> skillIds;
     private Integer statusId;
 
-    public GetMyEmployerProjectsRequest() {
-    }
-
     public GetMyEmployerProjectsRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

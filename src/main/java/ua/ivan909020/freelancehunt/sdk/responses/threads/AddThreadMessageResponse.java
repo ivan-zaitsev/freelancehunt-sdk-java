@@ -10,9 +10,6 @@ public class AddThreadMessageResponse extends ApiResponse {
     @JsonProperty("data")
     private Message message;
 
-    public AddThreadMessageResponse() {
-    }
-
     public Message getMessage() {
         return message;
     }

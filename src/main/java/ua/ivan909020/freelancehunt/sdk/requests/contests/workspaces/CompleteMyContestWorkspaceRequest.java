@@ -12,9 +12,6 @@ public class CompleteMyContestWorkspaceRequest extends PostApiRequest<CompleteMy
     private Long workspaceId;
     private String comment;
 
-    public CompleteMyContestWorkspaceRequest() {
-    }
-
     public CompleteMyContestWorkspaceRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

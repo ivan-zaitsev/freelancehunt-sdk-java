@@ -26,9 +26,6 @@ public class UpdateProjectRequest extends PatchApiRequest<UpdateProjectResponse>
     private ZonedDateTime expiredAt;
     private List<String> tags;
 
-    public UpdateProjectRequest() {
-    }
-
     public UpdateProjectRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

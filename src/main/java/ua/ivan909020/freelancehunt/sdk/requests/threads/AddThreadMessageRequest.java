@@ -12,9 +12,6 @@ public class AddThreadMessageRequest extends PostApiRequest<AddThreadMessageResp
     private Long threadId;
     private String messageHtml;
 
-    public AddThreadMessageRequest() {
-    }
-
     public AddThreadMessageRequest setThreadId(Long threadId) {
         this.threadId = threadId;
         return this;

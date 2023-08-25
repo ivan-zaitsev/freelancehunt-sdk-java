@@ -15,9 +15,6 @@ public class CompleteProjectWorkspaceRequest extends PostApiRequest<CompleteProj
     private Grades grades;
     private String review;
 
-    public CompleteProjectWorkspaceRequest() {
-    }
-
     public CompleteProjectWorkspaceRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

@@ -1,9 +1,12 @@
 package ua.ivan909020.freelancehunt.sdk.exceptions;
 
+import java.io.Serial;
+
 import ua.ivan909020.freelancehunt.sdk.objects.models.Error;
 
 public class ApiRequestException extends ApiException {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private Error error;

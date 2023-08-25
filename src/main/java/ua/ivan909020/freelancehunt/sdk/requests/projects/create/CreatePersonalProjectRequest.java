@@ -27,9 +27,6 @@ public class CreatePersonalProjectRequest extends PostApiRequest<CreatePersonalP
     private ZonedDateTime expiredAt;
     private List<String> tags;
 
-    public CreatePersonalProjectRequest() {
-    }
-
     public CreatePersonalProjectRequest setName(String name) {
         this.name = name;
         return this;
@@ -40,8 +37,8 @@ public class CreatePersonalProjectRequest extends PostApiRequest<CreatePersonalP
         return this;
     }
 
-    public CreatePersonalProjectRequest setPersonal(Boolean personal) {
-        isPersonal = personal;
+    public CreatePersonalProjectRequest setIsPersonal(Boolean isPersonal) {
+        this.isPersonal = isPersonal;
         return this;
     }
 

@@ -13,9 +13,6 @@ public class GetEmployerReviewsRequest extends GetApiRequest<GetEmployerReviewsR
     private Integer pageNumber;
     private Long employerId;
 
-    public GetEmployerReviewsRequest() {
-    }
-
     public GetEmployerReviewsRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

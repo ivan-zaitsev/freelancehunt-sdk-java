@@ -15,15 +15,12 @@ public class GetProjectBidsRequest extends GetApiRequest<GetProjectBidsResponse>
     private Boolean isWinner;
     private BidStatus bidStatus;
 
-    public GetProjectBidsRequest() {
-    }
-
     public GetProjectBidsRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    public GetProjectBidsRequest setWinner(Boolean isWinner) {
+    public GetProjectBidsRequest setIsWinner(Boolean isWinner) {
         this.isWinner = isWinner;
         return this;
     }

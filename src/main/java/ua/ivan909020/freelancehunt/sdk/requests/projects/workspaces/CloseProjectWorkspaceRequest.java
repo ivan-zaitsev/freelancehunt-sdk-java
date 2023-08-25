@@ -12,9 +12,6 @@ public class CloseProjectWorkspaceRequest extends PostApiRequest<CloseProjectWor
     private Long workspaceId;
     private String review;
 
-    public CloseProjectWorkspaceRequest() {
-    }
-
     public CloseProjectWorkspaceRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

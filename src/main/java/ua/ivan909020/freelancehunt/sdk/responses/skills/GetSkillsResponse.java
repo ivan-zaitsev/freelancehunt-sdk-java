@@ -12,9 +12,6 @@ public class GetSkillsResponse extends ApiResponse {
     @JsonProperty("data")
     private List<Skill> skills;
 
-    public GetSkillsResponse() {
-    }
-
     public List<Skill> getSkills() {
         return skills;
     }

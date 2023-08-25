@@ -15,9 +15,6 @@ public class IncompleteProjectWorkspaceRequest extends PostApiRequest<Incomplete
     private Grades grades;
     private String review;
 
-    public IncompleteProjectWorkspaceRequest() {
-    }
-
     public IncompleteProjectWorkspaceRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

@@ -12,9 +12,6 @@ public class GetThreadsResponse extends ApiResponse {
     @JsonProperty("data")
     private List<Thread> threads;
 
-    public GetThreadsResponse() {
-    }
-
     public List<Thread> getThreads() {
         return threads;
     }

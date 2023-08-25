@@ -19,9 +19,6 @@ public class ProposeProjectWorkspaceConditionsRequest
     private SafeType safeType;
     private String comment;
 
-    public ProposeProjectWorkspaceConditionsRequest() {
-    }
-
     public ProposeProjectWorkspaceConditionsRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

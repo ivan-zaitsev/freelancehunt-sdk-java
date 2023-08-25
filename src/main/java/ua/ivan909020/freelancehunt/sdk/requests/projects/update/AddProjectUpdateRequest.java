@@ -17,9 +17,6 @@ public class AddProjectUpdateRequest extends PostApiRequest<AddProjectUpdateResp
     private String updateHtml;
     private List<Integer> skills;
 
-    public AddProjectUpdateRequest() {
-    }
-
     public AddProjectUpdateRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

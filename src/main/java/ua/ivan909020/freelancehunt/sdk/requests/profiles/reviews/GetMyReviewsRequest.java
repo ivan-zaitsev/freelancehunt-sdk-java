@@ -11,9 +11,6 @@ public class GetMyReviewsRequest extends GetApiRequest<GetMyReviewsResponse> {
 
     private Integer pageNumber;
 
-    public GetMyReviewsRequest() {
-    }
-
     public GetMyReviewsRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

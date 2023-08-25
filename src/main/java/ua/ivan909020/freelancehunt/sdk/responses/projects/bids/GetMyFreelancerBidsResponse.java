@@ -12,9 +12,6 @@ public class GetMyFreelancerBidsResponse extends ApiResponse {
     @JsonProperty("data")
     private List<Bid> bids;
 
-    public GetMyFreelancerBidsResponse() {
-    }
-
     public List<Bid> getBids() {
         return bids;
     }

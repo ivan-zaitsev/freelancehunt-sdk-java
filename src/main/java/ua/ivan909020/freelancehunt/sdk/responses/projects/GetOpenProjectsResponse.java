@@ -12,9 +12,6 @@ public class GetOpenProjectsResponse extends ApiResponse {
     @JsonProperty("data")
     private List<ProjectDetails> projects;
 
-    public GetOpenProjectsResponse() {
-    }
-
     public List<ProjectDetails> getProjects() {
         return projects;
     }

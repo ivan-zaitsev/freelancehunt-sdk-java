@@ -6,9 +6,6 @@ import ua.ivan909020.freelancehunt.sdk.responses.countries.GetCountriesResponse;
 
 public class GetCountriesRequest extends GetApiRequest<GetCountriesResponse> {
 
-    public GetCountriesRequest() {
-    }
-
     @Override
     public String getUrlPath() {
         return "/countries";

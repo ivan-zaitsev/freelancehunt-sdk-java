@@ -14,9 +14,6 @@ public class GetEmployersRequest extends GetApiRequest<GetEmployersResponse> {
     private Long cityId;
     private String login;
 
-    public GetEmployersRequest() {
-    }
-
     public GetEmployersRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

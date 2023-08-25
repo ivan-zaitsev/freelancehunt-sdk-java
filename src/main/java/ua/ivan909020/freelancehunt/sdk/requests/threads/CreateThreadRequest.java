@@ -14,9 +14,6 @@ public class CreateThreadRequest extends PostApiRequest<CreateThreadResponse> {
     private String messageHtml;
     private Long toProfileId;
 
-    public CreateThreadRequest() {
-    }
-
     public CreateThreadRequest setSubject(String subject) {
         this.subject = subject;
         return this;

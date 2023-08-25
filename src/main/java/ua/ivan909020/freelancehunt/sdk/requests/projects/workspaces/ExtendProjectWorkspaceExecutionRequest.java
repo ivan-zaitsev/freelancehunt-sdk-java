@@ -12,9 +12,6 @@ public class ExtendProjectWorkspaceExecutionRequest extends PostApiRequest<Exten
     private Long workspaceId;
     private Integer days;
 
-    public ExtendProjectWorkspaceExecutionRequest() {
-    }
-
     public ExtendProjectWorkspaceExecutionRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

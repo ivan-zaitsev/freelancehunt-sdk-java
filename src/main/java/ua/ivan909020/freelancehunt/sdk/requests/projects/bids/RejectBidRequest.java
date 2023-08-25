@@ -10,9 +10,6 @@ public class RejectBidRequest extends PostApiRequest<RejectBidResponse> {
     private Long projectId;
     private Long bidId;
 
-    public RejectBidRequest() {
-    }
-
     public RejectBidRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

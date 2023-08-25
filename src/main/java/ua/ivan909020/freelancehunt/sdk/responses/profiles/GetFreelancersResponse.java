@@ -12,9 +12,6 @@ public class GetFreelancersResponse extends ApiResponse {
     @JsonProperty("data")
     private List<UserDetails> freelancers;
 
-    public GetFreelancersResponse() {
-    }
-
     public List<UserDetails> getFreelancers() {
         return freelancers;
     }

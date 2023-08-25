@@ -22,9 +22,6 @@ public class Thread {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public Thread() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -86,9 +83,6 @@ public class Thread {
         @JsonProperty("participants")
         private Participants participants;
 
-        public Attributes() {
-        }
-
         public String getSubject() {
             return subject;
         }
@@ -105,7 +99,7 @@ public class Thread {
             return messagesCount;
         }
 
-        public Boolean getUnread() {
+        public Boolean getIsUnread() {
             return isUnread;
         }
 

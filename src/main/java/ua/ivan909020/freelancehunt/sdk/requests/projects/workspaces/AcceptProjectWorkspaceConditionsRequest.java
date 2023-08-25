@@ -9,9 +9,6 @@ public class AcceptProjectWorkspaceConditionsRequest extends PostApiRequest<Acce
 
     private Long workspaceId;
 
-    public AcceptProjectWorkspaceConditionsRequest() {
-    }
-
     public AcceptProjectWorkspaceConditionsRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

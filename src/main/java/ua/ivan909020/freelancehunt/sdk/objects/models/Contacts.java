@@ -22,9 +22,6 @@ public class Contacts {
     @JsonProperty("website")
     private String website;
 
-    public Contacts() {
-    }
-
     public String getSkype() {
         return skype;
     }

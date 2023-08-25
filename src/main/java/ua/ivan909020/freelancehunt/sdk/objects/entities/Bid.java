@@ -24,9 +24,6 @@ public class Bid {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public Bid() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -99,9 +96,6 @@ public class Bid {
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
         private ZonedDateTime publishedAt;
 
-        public Attributes() {
-        }
-
         public Integer getDays() {
             return days;
         }
@@ -122,11 +116,11 @@ public class Bid {
             return status;
         }
 
-        public Boolean getHidden() {
+        public Boolean getIsHidden() {
             return isHidden;
         }
 
-        public Boolean getWinner() {
+        public Boolean getIsWinner() {
             return isWinner;
         }
 

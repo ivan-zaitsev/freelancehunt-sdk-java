@@ -15,9 +15,6 @@ public class GetMyContestsRequest extends GetApiRequest<GetMyContestsResponse> {
     private List<Integer> skillIds;
     private Integer statusId;
 
-    public GetMyContestsRequest() {
-    }
-
     public GetMyContestsRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

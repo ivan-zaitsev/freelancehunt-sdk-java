@@ -19,9 +19,6 @@ public class Error {
     @JsonProperty("meta")
     private JsonNode meta;
 
-    public Error() {
-    }
-
     public Integer getStatus() {
         return status;
     }

@@ -9,9 +9,6 @@ public class GetProjectDetailsRequest extends GetApiRequest<GetProjectDetailsRes
 
     private Long projectId;
 
-    public GetProjectDetailsRequest() {
-    }
-
     public GetProjectDetailsRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

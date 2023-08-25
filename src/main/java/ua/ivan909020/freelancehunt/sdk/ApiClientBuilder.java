@@ -60,6 +60,7 @@ public class ApiClientBuilder {
     private ObjectMapper buildObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        mapper.disable(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL);
         mapper.registerModule(new JavaTimeModule());
         return mapper;
     }

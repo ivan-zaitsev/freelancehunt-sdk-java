@@ -17,9 +17,6 @@ public class GetFreelancersRequest extends GetApiRequest<GetFreelancersResponse>
     private List<Integer> skillIds;
     private String login;
 
-    public GetFreelancersRequest() {
-    }
-
     public GetFreelancersRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

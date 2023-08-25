@@ -9,9 +9,6 @@ public class GetThreadMessagesRequest extends GetApiRequest<GetThreadMessagesRes
 
     private Long threadId;
 
-    public GetThreadMessagesRequest() {
-    }
-
     public GetThreadMessagesRequest setThreadId(Long threadId) {
         this.threadId = threadId;
         return this;

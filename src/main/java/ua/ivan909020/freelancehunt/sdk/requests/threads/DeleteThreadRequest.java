@@ -9,9 +9,6 @@ public class DeleteThreadRequest extends DeleteApiRequest<DeleteThreadResponse> 
 
     private Long threadId;
 
-    public DeleteThreadRequest() {
-    }
-
     @Override
     public String getUrlPath() {
         return "/threads/" + threadId;

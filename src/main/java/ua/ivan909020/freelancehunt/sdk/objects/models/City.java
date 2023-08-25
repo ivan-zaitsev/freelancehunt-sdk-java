@@ -12,9 +12,6 @@ public class City {
     @JsonProperty("name")
     private String name;
 
-    public City() {
-    }
-
     public Long getId() {
         return id;
     }

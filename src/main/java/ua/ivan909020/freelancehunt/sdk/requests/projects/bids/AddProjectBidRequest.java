@@ -19,9 +19,6 @@ public class AddProjectBidRequest extends PostApiRequest<AddProjectBidResponse> 
     private String comment;
     private Boolean isHidden;
 
-    public AddProjectBidRequest() {
-    }
-
     public AddProjectBidRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;
@@ -47,8 +44,8 @@ public class AddProjectBidRequest extends PostApiRequest<AddProjectBidResponse> 
         return this;
     }
 
-    public AddProjectBidRequest setHidden(Boolean hidden) {
-        isHidden = hidden;
+    public AddProjectBidRequest setIsHidden(Boolean isHidden) {
+        this.isHidden = isHidden;
         return this;
     }
 

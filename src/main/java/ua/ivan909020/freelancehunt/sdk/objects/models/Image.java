@@ -15,9 +15,6 @@ public class Image {
     @JsonProperty("height")
     private Integer height;
 
-    public Image() {
-    }
-
     public String getUrl() {
         return url;
     }

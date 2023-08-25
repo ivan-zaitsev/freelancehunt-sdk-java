@@ -26,9 +26,6 @@ public class CreatePublicProjectRequest extends PostApiRequest<CreatePublicProje
     private List<String> tags;
     private Boolean isOnlyForPlus;
 
-    public CreatePublicProjectRequest() {
-    }
-
     public CreatePublicProjectRequest setName(String name) {
         this.name = name;
         return this;
@@ -64,7 +61,7 @@ public class CreatePublicProjectRequest extends PostApiRequest<CreatePublicProje
         return this;
     }
 
-    public CreatePublicProjectRequest setOnlyForPlus(Boolean isOnlyForPlus) {
+    public CreatePublicProjectRequest setIsOnlyForPlus(Boolean isOnlyForPlus) {
         this.isOnlyForPlus = isOnlyForPlus;
         return this;
     }

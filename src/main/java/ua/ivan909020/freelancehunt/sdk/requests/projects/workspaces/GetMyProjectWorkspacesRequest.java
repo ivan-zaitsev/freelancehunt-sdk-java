@@ -12,9 +12,6 @@ public class GetMyProjectWorkspacesRequest extends GetApiRequest<GetMyProjectWor
     private Integer pageNumber;
     private Long projectId;
 
-    public GetMyProjectWorkspacesRequest() {
-    }
-
     public GetMyProjectWorkspacesRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

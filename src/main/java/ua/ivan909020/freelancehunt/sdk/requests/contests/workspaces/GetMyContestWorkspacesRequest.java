@@ -12,9 +12,6 @@ public class GetMyContestWorkspacesRequest extends GetApiRequest<GetMyContestWor
     private Integer pageNumber;
     private Long contestId;
 
-    public GetMyContestWorkspacesRequest() {
-    }
-
     public GetMyContestWorkspacesRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

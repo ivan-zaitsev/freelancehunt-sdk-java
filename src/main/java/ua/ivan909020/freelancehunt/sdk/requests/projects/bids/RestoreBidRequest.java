@@ -10,9 +10,6 @@ public class RestoreBidRequest extends PostApiRequest<RestoreBidResponse> {
     private Long projectId;
     private Long bidId;
 
-    public RestoreBidRequest() {
-    }
-
     public RestoreBidRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

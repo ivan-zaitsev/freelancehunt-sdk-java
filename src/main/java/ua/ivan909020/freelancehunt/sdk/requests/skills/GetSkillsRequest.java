@@ -6,9 +6,6 @@ import ua.ivan909020.freelancehunt.sdk.responses.skills.GetSkillsResponse;
 
 public class GetSkillsRequest extends GetApiRequest<GetSkillsResponse> {
 
-    public GetSkillsRequest() {
-    }
-
     @Override
     public String getUrlPath() {
         return "/skills";

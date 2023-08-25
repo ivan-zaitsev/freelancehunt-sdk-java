@@ -15,9 +15,6 @@ public class Skill {
     @JsonProperty("rating_position")
     private Integer ratingPosition;
 
-    public Skill() {
-    }
-
     public Long getId() {
         return id;
     }

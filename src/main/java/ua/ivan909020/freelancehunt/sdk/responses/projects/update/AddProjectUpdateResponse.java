@@ -10,9 +10,6 @@ public class AddProjectUpdateResponse extends ApiResponse {
     @JsonProperty("data")
     private ProjectDetails project;
 
-    public AddProjectUpdateResponse() {
-    }
-
     public ProjectDetails getProject() {
         return project;
     }

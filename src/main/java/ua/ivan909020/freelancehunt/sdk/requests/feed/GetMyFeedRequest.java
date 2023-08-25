@@ -6,9 +6,6 @@ import ua.ivan909020.freelancehunt.sdk.responses.feed.GetMyFeedResponse;
 
 public class GetMyFeedRequest extends GetApiRequest<GetMyFeedResponse> {
 
-    public GetMyFeedRequest() {
-    }
-
     @Override
     public String getUrlPath() {
         return "/my/feed";

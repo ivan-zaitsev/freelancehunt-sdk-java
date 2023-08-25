@@ -16,9 +16,6 @@ public class ReopenProjectRequest extends PostApiRequest<ReopenProjectResponse> 
     private Long projectId;
     private ZonedDateTime expiredAt;
 
-    public ReopenProjectRequest() {
-    }
-
     public ReopenProjectRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

@@ -20,9 +20,6 @@ public class Update {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
     private ZonedDateTime publishedAt;
 
-    public Update() {
-    }
-
     public String getDescription() {
         return description;
     }

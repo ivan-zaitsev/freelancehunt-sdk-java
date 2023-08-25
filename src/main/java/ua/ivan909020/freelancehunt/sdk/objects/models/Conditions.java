@@ -26,9 +26,6 @@ public class Conditions {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
     private ZonedDateTime confirmedAt;
 
-    public Conditions() {
-    }
-
     public Integer getDays() {
         return days;
     }

@@ -20,9 +20,6 @@ public class UpdateContestRequest extends PatchApiRequest<UpdateContestResponse>
     private Boolean isStockAllowed;
     private List<String> tags;
 
-    public UpdateContestRequest() {
-    }
-
     public UpdateContestRequest setContestId(Long contestId) {
         this.contestId = contestId;
         return this;
@@ -48,7 +45,7 @@ public class UpdateContestRequest extends PatchApiRequest<UpdateContestResponse>
         return this;
     }
 
-    public UpdateContestRequest setStockAllowed(Boolean isStockAllowed) {
+    public UpdateContestRequest setIsStockAllowed(Boolean isStockAllowed) {
         this.isStockAllowed = isStockAllowed;
         return this;
     }

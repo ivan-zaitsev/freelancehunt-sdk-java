@@ -16,9 +16,6 @@ public class ExtendProjectExpireDateRequest extends PostApiRequest<ExtendProject
     private Long projectId;
     private ZonedDateTime expiredAt;
 
-    public ExtendProjectExpireDateRequest() {
-    }
-
     public ExtendProjectExpireDateRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

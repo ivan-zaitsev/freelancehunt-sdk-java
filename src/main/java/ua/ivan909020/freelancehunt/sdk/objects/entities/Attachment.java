@@ -29,9 +29,6 @@ public class Attachment {
     @JsonProperty("thumbnail_url")
     private String thumbnailUrl;
 
-    public Attachment() {
-    }
-
     public Long getId() {
         return id;
     }

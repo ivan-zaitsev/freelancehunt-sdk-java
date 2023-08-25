@@ -12,9 +12,6 @@ public class GetCitiesResponse extends ApiResponse {
     @JsonProperty("data")
     private List<City> cities;
 
-    public GetCitiesResponse() {
-    }
-
     public List<City> getCities() {
         return cities;
     }

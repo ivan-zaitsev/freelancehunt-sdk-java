@@ -12,9 +12,6 @@ public class Location {
     @JsonProperty("city")
     private City city;
 
-    public Location() {
-    }
-
     public Country getCountry() {
         return country;
     }

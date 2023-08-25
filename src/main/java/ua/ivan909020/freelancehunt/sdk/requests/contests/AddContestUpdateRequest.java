@@ -12,9 +12,6 @@ public class AddContestUpdateRequest extends PostApiRequest<AddContestUpdateResp
     private Long contestId;
     private String updateHtml;
 
-    public AddContestUpdateRequest() {
-    }
-
     public AddContestUpdateRequest setContestId(Long contestId) {
         this.contestId = contestId;
         return this;

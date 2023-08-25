@@ -28,9 +28,6 @@ public class ProjectDetails {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public ProjectDetails() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -125,9 +122,6 @@ public class ProjectDetails {
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
         private ZonedDateTime expiredAt;
 
-        public Attributes() {
-        }
-
         public String getName() {
             return name;
         }
@@ -156,15 +150,15 @@ public class ProjectDetails {
             return bidCount;
         }
 
-        public Boolean getRemoteJob() {
+        public Boolean getIsRemoteJob() {
             return isRemoteJob;
         }
 
-        public Boolean getPremium() {
+        public Boolean getIsPremium() {
             return isPremium;
         }
 
-        public Boolean getOnlyForPlus() {
+        public Boolean getIsOnlyForPlus() {
             return isOnlyForPlus;
         }
 
@@ -176,7 +170,7 @@ public class ProjectDetails {
             return safeType;
         }
 
-        public Boolean getPersonal() {
+        public Boolean getIsPersonal() {
             return isPersonal;
         }
 

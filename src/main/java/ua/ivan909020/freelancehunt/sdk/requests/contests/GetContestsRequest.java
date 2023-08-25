@@ -15,9 +15,6 @@ public class GetContestsRequest extends GetApiRequest<GetContestsResponse> {
     private List<Integer> skillIds;
     private Long employerId;
 
-    public GetContestsRequest() {
-    }
-
     public GetContestsRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

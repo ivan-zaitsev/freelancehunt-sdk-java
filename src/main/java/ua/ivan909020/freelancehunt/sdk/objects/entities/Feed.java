@@ -21,9 +21,6 @@ public class Feed {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public Feed() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -75,9 +72,6 @@ public class Feed {
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
         private ZonedDateTime createdAt;
 
-        public Attributes() {
-        }
-
         public User getFrom() {
             return from;
         }
@@ -86,7 +80,7 @@ public class Feed {
             return message;
         }
 
-        public Boolean getNew() {
+        public Boolean getIsNew() {
             return isNew;
         }
 

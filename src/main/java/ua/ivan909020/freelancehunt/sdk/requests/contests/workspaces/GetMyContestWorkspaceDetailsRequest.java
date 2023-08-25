@@ -9,9 +9,6 @@ public class GetMyContestWorkspaceDetailsRequest extends GetApiRequest<GetMyCont
 
     private Long workspaceId;
 
-    public GetMyContestWorkspaceDetailsRequest() {
-    }
-
     public GetMyContestWorkspaceDetailsRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

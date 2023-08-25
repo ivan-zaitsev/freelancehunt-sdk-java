@@ -10,9 +10,6 @@ public class RevokeBidRequest extends PostApiRequest<RevokeBidResponse> {
     private Long projectId;
     private Long bidId;
 
-    public RevokeBidRequest() {
-    }
-
     public RevokeBidRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

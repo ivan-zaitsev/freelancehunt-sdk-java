@@ -10,9 +10,6 @@ public class GetFreelancerDetailsResponse extends ApiResponse {
     @JsonProperty("data")
     private UserDetails freelancer;
 
-    public GetFreelancerDetailsResponse() {
-    }
-
     public UserDetails getFreelancer() {
         return freelancer;
     }

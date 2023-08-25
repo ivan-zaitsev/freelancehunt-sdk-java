@@ -9,9 +9,6 @@ public class GetEmployerDetailsRequest extends GetApiRequest<GetEmployerDetailsR
 
     private Long employerId;
 
-    public GetEmployerDetailsRequest() {
-    }
-
     public GetEmployerDetailsRequest setEmployerId(Long employerId) {
         this.employerId = employerId;
         return this;

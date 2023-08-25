@@ -29,9 +29,6 @@ public class Project {
     @JsonProperty("budget")
     private Budget budget;
 
-    public Project() {
-    }
-
     public Long getId() {
         return id;
     }

@@ -13,9 +13,6 @@ public class GetMyFreelancerBidsRequest extends GetApiRequest<GetMyFreelancerBid
     private Long projectId;
     private BidStatus bidStatus;
 
-    public GetMyFreelancerBidsRequest() {
-    }
-
     public GetMyFreelancerBidsRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

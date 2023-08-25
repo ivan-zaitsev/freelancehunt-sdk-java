@@ -1,7 +1,10 @@
 package ua.ivan909020.freelancehunt.sdk.exceptions;
 
+import java.io.Serial;
+
 public class ApiRequestSerializationException extends ApiException {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private Object content;

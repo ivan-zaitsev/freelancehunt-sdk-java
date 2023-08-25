@@ -11,9 +11,6 @@ public class GetThreadsRequest extends GetApiRequest<GetThreadsResponse> {
 
     private Integer pageNumber;
 
-    public GetThreadsRequest() {
-    }
-
     public GetThreadsRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

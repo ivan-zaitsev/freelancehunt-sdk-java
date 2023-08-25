@@ -10,9 +10,6 @@ public class GetEmployerDetailsResponse extends ApiResponse {
     @JsonProperty("data")
     private UserDetails employer;
 
-    public GetEmployerDetailsResponse() {
-    }
-
     public UserDetails getEmployer() {
         return employer;
     }

@@ -9,9 +9,6 @@ public class GetCitiesRequest extends GetApiRequest<GetCitiesResponse> {
 
     private Long countryId;
 
-    public GetCitiesRequest() {
-    }
-
     public GetCitiesRequest setCountryId(Long countryId) {
         this.countryId = countryId;
         return this;

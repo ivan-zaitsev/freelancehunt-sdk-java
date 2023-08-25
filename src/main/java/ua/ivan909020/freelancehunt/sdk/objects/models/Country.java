@@ -15,9 +15,6 @@ public class Country {
     @JsonProperty("name")
     private String name;
 
-    public Country() {
-    }
-
     public Long getId() {
         return id;
     }

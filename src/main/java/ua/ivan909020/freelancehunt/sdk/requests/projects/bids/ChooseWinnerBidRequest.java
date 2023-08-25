@@ -13,9 +13,6 @@ public class ChooseWinnerBidRequest extends PostApiRequest<ChooseWinnerBidRespon
     private Long bidId;
     private String comment;
 
-    public ChooseWinnerBidRequest() {
-    }
-
     public ChooseWinnerBidRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

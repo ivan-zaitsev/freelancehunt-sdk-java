@@ -10,9 +10,6 @@ public class GetMyContestWorkspaceDetailsResponse extends ApiResponse {
     @JsonProperty("data")
     private ContestWorkspace contestWorkspace;
 
-    public GetMyContestWorkspaceDetailsResponse() {
-    }
-
     public ContestWorkspace getContestWorkspace() {
         return contestWorkspace;
     }

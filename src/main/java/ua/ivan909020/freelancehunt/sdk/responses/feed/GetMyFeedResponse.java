@@ -12,9 +12,6 @@ public class GetMyFeedResponse extends ApiResponse {
     @JsonProperty("data")
     private List<Feed> feeds;
 
-    public GetMyFeedResponse() {
-    }
-
     public List<Feed> getFeeds() {
         return feeds;
     }

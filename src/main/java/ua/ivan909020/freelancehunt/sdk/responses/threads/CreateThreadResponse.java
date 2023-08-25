@@ -10,9 +10,6 @@ public class CreateThreadResponse extends ApiResponse {
     @JsonProperty("data")
     private Thread thread;
 
-    public CreateThreadResponse() {
-    }
-
     public Thread getThread() {
         return thread;
     }

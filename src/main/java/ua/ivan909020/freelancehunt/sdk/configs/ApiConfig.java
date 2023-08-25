@@ -6,9 +6,6 @@ public class ApiConfig {
     private String apiToken;
     private String language;
 
-    public ApiConfig() {
-    }
-
     public String getBaseUrl() {
         return baseUrl;
     }

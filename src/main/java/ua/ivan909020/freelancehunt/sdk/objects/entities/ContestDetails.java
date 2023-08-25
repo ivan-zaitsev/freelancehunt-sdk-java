@@ -27,9 +27,6 @@ public class ContestDetails {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public ContestDetails() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -111,9 +108,6 @@ public class ContestDetails {
 
         @JsonProperty("updates")
         private List<Update> updates;
-
-        public Attributes() {
-        }
 
         public String getName() {
             return name;

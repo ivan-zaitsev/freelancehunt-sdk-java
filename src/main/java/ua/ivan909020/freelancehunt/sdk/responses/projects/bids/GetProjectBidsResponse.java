@@ -12,9 +12,6 @@ public class GetProjectBidsResponse extends ApiResponse {
     @JsonProperty("data")
     private List<Bid> bids;
 
-    public GetProjectBidsResponse() {
-    }
-
     public List<Bid> getBids() {
         return bids;
     }

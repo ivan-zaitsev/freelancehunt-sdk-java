@@ -17,9 +17,6 @@ public class GetOpenProjectsRequest extends GetApiRequest<GetOpenProjectsRespons
     private Long employerId;
     private Integer onlyForPlus;
 
-    public GetOpenProjectsRequest() {
-    }
-
     public GetOpenProjectsRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

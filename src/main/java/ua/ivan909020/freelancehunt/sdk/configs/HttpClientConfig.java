@@ -12,9 +12,6 @@ public class HttpClientConfig {
 
     private List<ApiRequestInterceptior> interceptors = new ArrayList<>();
 
-    public HttpClientConfig() {
-    }
-
     public int getConnectionTimeout() {
         return connectionTimeout;
     }

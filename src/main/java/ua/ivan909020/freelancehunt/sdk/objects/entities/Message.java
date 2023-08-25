@@ -23,9 +23,6 @@ public class Message {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public Message() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -79,9 +76,6 @@ public class Message {
 
         @JsonProperty("participants")
         private Participants participants;
-
-        public Attributes() {
-        }
 
         public String getMessage() {
             return message;

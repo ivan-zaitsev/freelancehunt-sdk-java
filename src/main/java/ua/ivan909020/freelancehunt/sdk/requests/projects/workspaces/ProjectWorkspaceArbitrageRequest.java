@@ -12,9 +12,6 @@ public class ProjectWorkspaceArbitrageRequest extends PostApiRequest<ProjectWork
     private Long workspaceId;
     private String commentHtml;
 
-    public ProjectWorkspaceArbitrageRequest() {
-    }
-
     public ProjectWorkspaceArbitrageRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

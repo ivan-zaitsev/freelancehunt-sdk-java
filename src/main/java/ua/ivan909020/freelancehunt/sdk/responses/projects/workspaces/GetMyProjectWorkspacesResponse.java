@@ -12,9 +12,6 @@ public class GetMyProjectWorkspacesResponse extends ApiResponse {
     @JsonProperty("data")
     private List<ProjectWorkspace> projectWorkspaces;
 
-    public GetMyProjectWorkspacesResponse() {
-    }
-
     public List<ProjectWorkspace> getProjectWorkspaces() {
         return projectWorkspaces;
     }

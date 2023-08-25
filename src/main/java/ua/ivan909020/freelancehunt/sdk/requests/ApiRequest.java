@@ -39,13 +39,9 @@ public abstract class ApiRequest<T extends ApiResponse> {
 
     public String getUrl() {
         String baseUrl = apiClient.getApiConfig().getBaseUrl();
-        String urlPath = getUrlPath();
         String urlParameters = RequestUtils.buildUrlParameters(httpEntity.getUrlParameters());
-
-        return baseUrl + urlPath + urlParameters;
+        return baseUrl + getUrlPath() + urlParameters;
     }
-
-    public abstract boolean isWritable();
 
     public abstract String getMethod();
 
@@ -53,19 +49,18 @@ public abstract class ApiRequest<T extends ApiResponse> {
 
     public abstract HttpEntity getEntity();
 
-    protected abstract void writeRequest(HttpRequest request) throws IOException;
+    public boolean isWritable() {
+        return false;
+    }
+
+    protected void writeRequest(HttpRequest request) throws IOException {
+    }
 
     protected T deserializeResponse(HttpResponse response) throws IOException {
-        T result = responseDeserializer.deserialize(response, getResponseClass());
-
-        if (result.getError() != null) {
-            throw new ApiRequestException("Api response error", result.getError());
-        }
-        return result;
+        return responseDeserializer.deserialize(response, getResponseClass());
     }
 
     protected void validate() {
-
     }
 
     @SuppressWarnings("unchecked")
@@ -81,8 +76,17 @@ public abstract class ApiRequest<T extends ApiResponse> {
         RequestExecutionChain executionChain = new RequestExecutionChain(apiClient.getHttpClientConfig());
 
         try (HttpResponse response = executionChain.execute(context)) {
-            return deserializeResponse(response);
+            return deserializeResponseInternal(response);
         }
+    }
+
+    private T deserializeResponseInternal(HttpResponse response) throws IOException {
+        T result = deserializeResponse(response);
+
+        if (result.getError() != null) {
+            throw new ApiRequestException("Api response error", result.getError());
+        }
+        return result;
     }
 
 }

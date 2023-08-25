@@ -10,9 +10,6 @@ public class GetMyProfileResponse extends ApiResponse {
     @JsonProperty("data")
     private UserDetails profile;
 
-    public GetMyProfileResponse() {
-    }
-
     public UserDetails getProfile() {
         return profile;
     }

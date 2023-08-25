@@ -12,9 +12,6 @@ public class Tag {
     @JsonProperty("name")
     private String name;
 
-    public Tag() {
-    }
-
     public Integer getId() {
         return id;
     }

@@ -9,9 +9,6 @@ public class CloseProjectRequest extends PostApiRequest<CloseProjectResponse> {
 
     private Long projectId;
 
-    public CloseProjectRequest() {
-    }
-
     public CloseProjectRequest setProjectId(Long projectId) {
         this.projectId = projectId;
         return this;

@@ -12,9 +12,6 @@ public class GetMyContestWorkspacesResponse extends ApiResponse {
     @JsonProperty("data")
     private List<ContestWorkspace> contestWorkspaces;
 
-    public GetMyContestWorkspacesResponse() {
-    }
-
     public List<ContestWorkspace> getContestWorkspaces() {
         return contestWorkspaces;
     }

@@ -13,9 +13,6 @@ public class GetFreelancerReviewsRequest extends GetApiRequest<GetFreelancerRevi
     private Integer pageNumber;
     private Long freelancerId;
 
-    public GetFreelancerReviewsRequest() {
-    }
-
     public GetFreelancerReviewsRequest setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;

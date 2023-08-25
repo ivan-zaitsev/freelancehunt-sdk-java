@@ -6,9 +6,6 @@ import ua.ivan909020.freelancehunt.sdk.responses.profiles.GetMyProfileResponse;
 
 public class GetMyProfileRequest extends GetApiRequest<GetMyProfileResponse> {
 
-    public GetMyProfileRequest() {
-    }
-
     @Override
     public String getUrlPath() {
         return "/my/profile";

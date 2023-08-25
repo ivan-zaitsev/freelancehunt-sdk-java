@@ -12,9 +12,6 @@ public class Avatar {
     @JsonProperty("large")
     private Image largeImage;
 
-    public Avatar() {
-    }
-
     public Image getSmallImage() {
         return smallImage;
     }

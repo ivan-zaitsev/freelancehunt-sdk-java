@@ -12,9 +12,6 @@ public class GetFreelancerReviewsResponse extends ApiResponse {
     @JsonProperty("data")
     private List<Review> reviews;
 
-    public GetFreelancerReviewsResponse() {
-    }
-
     public List<Review> getReviews() {
         return reviews;
     }

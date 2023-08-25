@@ -12,9 +12,6 @@ public class GetMyEmployerProjectsResponse extends ApiResponse {
     @JsonProperty("data")
     private List<ProjectDetails> projects;
 
-    public GetMyEmployerProjectsResponse() {
-    }
-
     public List<ProjectDetails> getProjects() {
         return projects;
     }

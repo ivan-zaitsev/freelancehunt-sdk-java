@@ -9,9 +9,6 @@ public class GetFreelancerDetailsRequest extends GetApiRequest<GetFreelancerDeta
 
     private Long freelancerId;
 
-    public GetFreelancerDetailsRequest() {
-    }
-
     public GetFreelancerDetailsRequest setFreelancerId(Long freelancerId) {
         this.freelancerId = freelancerId;
         return this;

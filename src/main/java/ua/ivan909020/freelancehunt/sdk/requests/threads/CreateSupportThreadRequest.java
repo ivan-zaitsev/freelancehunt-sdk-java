@@ -13,9 +13,6 @@ public class CreateSupportThreadRequest extends PostApiRequest<CreateSupportThre
     private String subject;
     private String messageHtml;
 
-    public CreateSupportThreadRequest() {
-    }
-
     public CreateSupportThreadRequest setSubject(String subject) {
         this.subject = subject;
         return this;

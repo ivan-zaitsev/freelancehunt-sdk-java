@@ -9,9 +9,6 @@ public class GetMyProjectWorkspaceDetailsRequest extends GetApiRequest<GetMyProj
 
     private Long workspaceId;
 
-    public GetMyProjectWorkspaceDetailsRequest() {
-    }
-
     public GetMyProjectWorkspaceDetailsRequest setWorkspaceId(Long workspaceId) {
         this.workspaceId = workspaceId;
         return this;

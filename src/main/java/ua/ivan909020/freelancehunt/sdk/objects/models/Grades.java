@@ -35,9 +35,6 @@ public class Grades {
     @JsonProperty("total")
     private Float total;
 
-    public Grades() {
-    }
-
     public Integer getConnectivity() {
         return connectivity;
     }

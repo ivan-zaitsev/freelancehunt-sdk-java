@@ -1,30 +1,24 @@
 package ua.ivan909020.freelancehunt.sdk.requests.threads;
 
-import static java.lang.String.format;
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import ua.ivan909020.freelancehunt.sdk.exceptions.ApiValidationException;
 import ua.ivan909020.freelancehunt.sdk.objects.request.HttpRequest;
 import ua.ivan909020.freelancehunt.sdk.objects.request.entity.HttpEntity;
 import ua.ivan909020.freelancehunt.sdk.requests.PostApiRequest;
 import ua.ivan909020.freelancehunt.sdk.responses.threads.UploadFileToThreadResponse;
-import ua.ivan909020.freelancehunt.sdk.utils.StreamUtils;
+import ua.ivan909020.freelancehunt.sdk.services.requests.MultipartRequestWriter;
 
 public class UploadFileToThreadRequest extends PostApiRequest<UploadFileToThreadResponse> {
 
     private Long threadId;
     private List<File> attachments;
-
-    public UploadFileToThreadRequest() {
-    }
 
     public UploadFileToThreadRequest setThreadId(Long threadId) {
         this.threadId = threadId;
@@ -45,51 +39,32 @@ public class UploadFileToThreadRequest extends PostApiRequest<UploadFileToThread
     public HttpEntity getEntity() {
         if (httpEntity == null) {
             httpEntity = new HttpEntity();
+            httpEntity.addHeaders(buildHeaders());
         }
         return httpEntity;
     }
 
+    private Map<String, String> buildHeaders() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("Content-Type", "multipart/form-data; boundary=boundary");
+        return parameters;
+    }
+
     @Override
     public void writeRequest(HttpRequest request) throws IOException {
-        request.addHeader("Content-Type", "multipart/form-data; boundary=boundary");
-
-        try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(request.getOutputStream(), UTF_8), true)) {
+        OutputStream outputStream = request.getOutputStream();
+        try (outputStream) {
+            MultipartRequestWriter writer = new MultipartRequestWriter("boundary", outputStream);
             for (int i = 0; i < attachments.size(); i++) {
                 String fieldName = "attachment" + (i + 1);
                 File file = attachments.get(i);
 
-                appendFileHeaders(writer, fieldName, file.getName());
-                appendFileContent(request.getOutputStream(), file);
-
-                writer.append("\r\n");
+                try (FileInputStream inputStream = new FileInputStream(file)) {
+                    writer.writeFilePart(fieldName, fieldName, inputStream);
+                }
             }
-
-            writer.append("\r\n");
-            writer.append("--").append("boundary").append("--").append("\r\n");
-            writer.flush();
+            writer.finish();
         }
-    }
-
-    private void appendFileHeaders(PrintWriter writer, String fieldName, String fileName) {
-        writer.append("--").append("boundary");
-        writer.append("\r\n");
-
-        writer.append(format("Content-Disposition: form-data; name=\"%s\"; filename=\"%s\"", fieldName, fileName));
-        writer.append("\r\n");
-
-        writer.append("Content-Type: application/octet-stream; charset=UTF-8");
-        writer.append("\r\n");
-
-        writer.append("Content-Transfer-Encoding: binary");
-        writer.append("\r\n\r\n");
-        writer.flush();
-    }
-
-    private void appendFileContent(OutputStream outputStream, File file) throws IOException {
-        try (FileInputStream inputStream = new FileInputStream(file)) {
-            StreamUtils.transfer(inputStream, outputStream);
-        }
-        outputStream.flush();
     }
 
     @Override

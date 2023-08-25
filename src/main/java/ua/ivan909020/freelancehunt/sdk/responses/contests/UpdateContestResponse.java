@@ -10,9 +10,6 @@ public class UpdateContestResponse extends ApiResponse {
     @JsonProperty("data")
     private ContestDetails contest;
 
-    public UpdateContestResponse() {
-    }
-
     public ContestDetails getContest() {
         return contest;
     }

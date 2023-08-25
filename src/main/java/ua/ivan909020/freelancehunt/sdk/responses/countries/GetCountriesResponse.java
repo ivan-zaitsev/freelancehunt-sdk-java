@@ -12,9 +12,6 @@ public class GetCountriesResponse extends ApiResponse {
     @JsonProperty("data")
     private List<Country> countries;
 
-    public GetCountriesResponse() {
-    }
-
     public List<Country> getCountries() {
         return countries;
     }

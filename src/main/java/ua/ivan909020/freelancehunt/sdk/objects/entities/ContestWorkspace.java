@@ -21,9 +21,6 @@ public class ContestWorkspace {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public ContestWorkspace() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -78,9 +75,6 @@ public class ContestWorkspace {
         @JsonProperty("ended_at")
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
         private ZonedDateTime endedAt;
-
-        public Attributes() {
-        }
 
         public Contest getContest() {
             return contest;

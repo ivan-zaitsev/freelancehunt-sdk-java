@@ -22,9 +22,6 @@ public class ProjectWorkspace {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public ProjectWorkspace() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -82,9 +79,6 @@ public class ProjectWorkspace {
         @JsonProperty("arbitrage_started_at")
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
         private ZonedDateTime arbitrageStartedAt;
-
-        public Attributes() {
-        }
 
         public ZonedDateTime getDevelopmentEndsAt() {
             return developmentEndsAt;

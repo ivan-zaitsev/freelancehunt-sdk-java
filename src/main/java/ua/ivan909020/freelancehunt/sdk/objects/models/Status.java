@@ -12,9 +12,6 @@ public class Status {
     @JsonProperty("name")
     private String name;
 
-    public Status() {
-    }
-
     public Integer getId() {
         return id;
     }

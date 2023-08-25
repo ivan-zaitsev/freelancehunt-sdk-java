@@ -10,9 +10,6 @@ public class UploadFileToThreadResponse extends ApiResponse {
     @JsonProperty("data")
     private Message message;
 
-    public UploadFileToThreadResponse() {
-    }
-
     public Message getMessage() {
         return message;
     }

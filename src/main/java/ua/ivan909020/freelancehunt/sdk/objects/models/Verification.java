@@ -24,9 +24,6 @@ public class Verification {
     @JsonProperty("email")
     private Boolean email;
 
-    public Verification() {
-    }
-
     public Boolean getIdentity() {
         return identity;
     }

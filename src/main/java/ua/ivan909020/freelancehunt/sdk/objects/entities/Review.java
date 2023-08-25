@@ -22,9 +22,6 @@ public class Review {
     @JsonProperty("attributes")
     private Attributes attributes;
 
-    public Review() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -82,14 +79,11 @@ public class Review {
         @JsonProperty("project")
         private Project project;
 
-        public Attributes() {
-        }
-
         public ZonedDateTime getPublishedAt() {
             return publishedAt;
         }
 
-        public Boolean getPending() {
+        public Boolean getIsPending() {
             return isPending;
         }
 

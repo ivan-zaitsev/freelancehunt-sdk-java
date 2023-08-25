@@ -6,9 +6,6 @@ import ua.ivan909020.freelancehunt.sdk.responses.feed.ReadMyFeedResponse;
 
 public class ReadMyFeedRequest extends PostApiRequest<ReadMyFeedResponse> {
 
-    public ReadMyFeedRequest() {
-    }
-
     @Override
     public String getUrlPath() {
         return "/my/feed/read";
