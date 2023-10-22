@@ -5,13 +5,13 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ua.ivan909020</groupId>
+    <groupId>ua.ivanzaitsev</groupId>
     <artifactId>freelancehunt-sdk-java</artifactId>
     <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>Freelancehunt SDK</name>
-    <url>https://github.com/ivan909020/freelancehunt-sdk-java</url>
+    <url>https://github.com/ivan-zaitsev/freelancehunt-sdk-java</url>
 
     <properties>
         <java.version>11</java.version>
