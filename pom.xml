@@ -15,7 +15,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <fasterxml.jackson.version>2.22.2</fasterxml.jackson.version>
+        <fasterxml.jackson.version>2.22.3</fasterxml.jackson.version>
         <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
     </properties>
 
